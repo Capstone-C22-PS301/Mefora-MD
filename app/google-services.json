@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1084004394780",
+    "project_id": "mefora-daafd",
+    "storage_bucket": "mefora-daafd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1084004394780:android:2f90a5ccb06f3505477cd9",
+        "android_client_info": {
+          "package_name": "com.example.mefora"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1084004394780-sk0mvj0cr1vrbvj0d11dieqb43uhhece.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDQQLZbTNbqArtoTYfVsjQBeXS80I1NLeY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1084004394780-sk0mvj0cr1vrbvj0d11dieqb43uhhece.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
