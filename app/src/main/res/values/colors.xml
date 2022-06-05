@@ -11,6 +11,7 @@
     <color name="black_dim">#BF000000</color>
     <color name="light_blue">#51A8FF</color>
     <color name="grey">#6B6B6B</color>
-    
+    <color name="grey_96">#969696</color>
+    <color name="light_blue_button">#2C98F0</color>
 <!--    <color name="blue_calm">#51A8FF</color>-->
 </resources>

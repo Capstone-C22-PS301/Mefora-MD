@@ -1,119 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.profile.ProfileFragment">
+    tools:context=".ui.profile.ProfileFragment" >
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/profile_image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="52dp"
-        android:contentDescription="Gambar Pasien"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:src="@tools:sample/avatars" />
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="42dp"
+            android:layout_marginTop="52dp"
+            android:contentDescription="Gambar Pasien"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/avatars" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/profile_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="42dp"
-        android:text="HMS Vanguard"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="20sp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/profile_image"
-        app:layout_constraintTop_toTopOf="@+id/profile_image" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profile_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="42dp"
+            android:text="HMS Vanguard"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/profile_image"
+            app:layout_constraintTop_toTopOf="@+id/profile_image" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/profile_id_patient"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="HMS Vanguard"
-        android:textAlignment="textStart"
-        android:textColor="@color/black_dim"
-        android:textSize="12sp"
-        app:layout_constraintStart_toStartOf="@+id/profile_name"
-        app:layout_constraintTop_toBottomOf="@+id/profile_name" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profile_id_patient"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="HMS Vanguard"
+            android:textAlignment="textStart"
+            android:textColor="@color/black_dim"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/profile_name"
+            app:layout_constraintTop_toBottomOf="@+id/profile_name" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/profile_email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="mail@yahoo.com"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="12sp"
-        app:layout_constraintBottom_toBottomOf="@+id/profile_image"
-        app:layout_constraintStart_toStartOf="@+id/profile_id_patient" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profile_email"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="mail@yahoo.com"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/profile_image"
+            app:layout_constraintStart_toStartOf="@+id/profile_id_patient" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/text_about"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="42dp"
-        android:text="About You"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="@+id/profile_image"
-        app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/text_about"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="42dp"
+            android:text="About You"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/profile_image"
+            app:layout_constraintTop_toBottomOf="@+id/profile_image" />
 
-    <View
-        android:id="@+id/hr1"
-        android:layout_width="85dp"
-        android:layout_height="2dp"
-        android:layout_marginTop="8dp"
-        android:background="#000"
-        app:layout_constraintStart_toStartOf="@+id/text_about"
-        app:layout_constraintTop_toBottomOf="@+id/text_about" />
+        <View
+            android:id="@+id/hr1"
+            android:layout_width="85dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:background="#000"
+            app:layout_constraintStart_toStartOf="@+id/text_about"
+            app:layout_constraintTop_toBottomOf="@+id/text_about" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/profile_text_full_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:fontFamily="@font/PoppinsMedium"
-        android:text="Full Name"
-        android:textAlignment="textStart"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        app:layout_constraintStart_toStartOf="@+id/hr1"
-        app:layout_constraintTop_toBottomOf="@+id/hr1" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profile_text_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/PoppinsMedium"
+            android:text="Full Name"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/hr1"
+            app:layout_constraintTop_toBottomOf="@+id/hr1" />
 
-    <com.google.android.material.textview.MaterialTextView
-        android:id="@+id/profile_full_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="6dp"
-        android:fontFamily="@font/PoppinsRegular"
-        android:text="HMS Vanguard"
-        android:textAlignment="textStart"
-        android:textColor="@color/grey"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/profile_text_full_name"
-        app:layout_constraintTop_toBottomOf="@+id/profile_text_full_name" />
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profile_full_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:fontFamily="@font/PoppinsRegular"
+            android:text="HMS Vanguard"
+            android:textAlignment="textStart"
+            android:textColor="@color/grey"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/profile_text_full_name"
+            app:layout_constraintTop_toBottomOf="@+id/profile_text_full_name" />
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="320dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:background="#000"
-        app:layout_constraintStart_toStartOf="@+id/profile_full_name"
-        app:layout_constraintTop_toBottomOf="@+id/profile_full_name" />
+        <View
+            android:id="@+id/hr2"
+            android:layout_width="320dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/grey_96"
+            app:layout_constraintStart_toStartOf="@+id/profile_full_name"
+            app:layout_constraintTop_toBottomOf="@+id/profile_full_name" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profile_text_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/PoppinsMedium"
+            android:text="Nickname"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/hr2"
+            app:layout_constraintTop_toBottomOf="@+id/hr2" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profile_nickname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/PoppinsRegular"
+            android:text="HMS Vanguard"
+            android:textAlignment="textStart"
+            android:textColor="@color/grey"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/profile_text_nickname"
+            app:layout_constraintTop_toBottomOf="@+id/profile_text_nickname" />
+
+        <View
+            android:id="@+id/hr3"
+            android:layout_width="320dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/grey_96"
+            app:layout_constraintStart_toStartOf="@+id/profile_nickname"
+            app:layout_constraintTop_toBottomOf="@+id/profile_nickname" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profile_text_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/PoppinsMedium"
+            android:text="Address"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/hr3"
+            app:layout_constraintTop_toBottomOf="@+id/hr3" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profile_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/PoppinsRegular"
+            android:text="HMS Vanguard"
+            android:textAlignment="textStart"
+            android:textColor="@color/grey"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/profile_text_address"
+            app:layout_constraintTop_toBottomOf="@+id/profile_text_address" />
+
+        <View
+            android:id="@+id/hr4"
+            android:layout_width="320dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/grey_96"
+            app:layout_constraintStart_toStartOf="@+id/profile_address"
+            app:layout_constraintTop_toBottomOf="@+id/profile_address" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profile_text_id_doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/PoppinsMedium"
+            android:text="Doctor ID"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/hr4"
+            app:layout_constraintTop_toBottomOf="@+id/hr4" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profile_id_doctor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/PoppinsRegular"
+            android:text="HMS Vanguard"
+            android:textAlignment="textStart"
+            android:textColor="@color/grey"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/profile_text_id_doctor"
+            app:layout_constraintTop_toBottomOf="@+id/profile_text_id_doctor" />
+
+        <View
+            android:id="@+id/hr5"
+            android:layout_width="320dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/grey_96"
+            app:layout_constraintStart_toStartOf="@+id/profile_id_doctor"
+            app:layout_constraintTop_toBottomOf="@+id/profile_id_doctor" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profile_text_doctor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/PoppinsMedium"
+            android:text="Doctor Name"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@+id/hr5"
+            app:layout_constraintTop_toBottomOf="@+id/hr5" />
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/profile_doctor_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/PoppinsRegular"
+            android:text="HMS Vanguard"
+            android:textAlignment="textStart"
+            android:textColor="@color/grey"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/profile_text_doctor_name"
+            app:layout_constraintTop_toBottomOf="@+id/profile_text_doctor_name" />
+
+        <com.google.android.material.button.MaterialButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:text="Edit"
+            android:backgroundTint="@color/grey_96"
+            app:layout_constraintStart_toStartOf="@+id/profile_doctor_name"
+            app:layout_constraintTop_toBottomOf="@+id/profile_doctor_name" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
