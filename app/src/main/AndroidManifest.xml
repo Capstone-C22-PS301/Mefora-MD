@@ -10,12 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mefora" >
         <activity
-            android:name=".MainActivity"
+            android:name=".HomePatientActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home_patient" />
+        <activity
+            android:name=".ui.authentication.AuthenticationActivity"
             android:exported="false" />
         <activity
-            android:name=".HomePatientActivity"
-            android:exported="true"
-            android:label="@string/title_activity_home_patient" >
+            android:name=".ui.SplashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.MainActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
