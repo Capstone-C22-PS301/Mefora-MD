@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/drawable/home_items_background.xml" value="0.158" />
+        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/activity_authentication.xml" value="0.225" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/activity_home_patient.xml" value="0.225" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/activity_on_boarding.xml" value="0.225" />
@@ -18,6 +19,7 @@
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_doctor_user_profile.xml" value="0.25" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_home.xml" value="0.25" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_home_item.xml" value="0.225" />
+        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_login.xml" value="0.225" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/home_items.xml" value="0.25" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/patient_items.xml" value="0.25" />
