@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.example.mefora.ui.home.HomeFragment"
+        android:name="com.example.mefora.ui.patient.home.HomeFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/navigation_profile"
-        android:name="com.example.mefora.ui.profile.ProfileFragment"
+        android:name="com.example.mefora.ui.patient.profile.ProfileFragment"
         android:label="@string/title_profile"
         tools:layout="@layout/fragment_profile" />
 
     <fragment
         android:id="@+id/navigation_food"
-        android:name="com.example.mefora.ui.food.FoodFragment"
+        android:name="com.example.mefora.ui.patient.food.FoodFragment"
         android:label="@string/title_food"
         tools:layout="@layout/fragment_food" />
 

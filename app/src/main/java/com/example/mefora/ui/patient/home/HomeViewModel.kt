@@ -1,4 +1,4 @@
-package com.example.mefora.ui.home
+package com.example.mefora.ui.patient.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

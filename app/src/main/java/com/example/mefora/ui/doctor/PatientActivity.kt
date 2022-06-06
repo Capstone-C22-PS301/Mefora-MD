@@ -1,4 +1,4 @@
-package com.example.mefora.ui.patient.doctor
+package com.example.mefora.ui.doctor
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
