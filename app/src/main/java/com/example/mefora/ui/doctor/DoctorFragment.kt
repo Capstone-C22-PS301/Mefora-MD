@@ -1,16 +1,13 @@
-package com.example.mefora.ui.doctor
+package com.example.mefora.ui.patient.doctor
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
-import com.example.mefora.R
 import com.example.mefora.databinding.FragmentDoctorBinding
-import com.example.mefora.databinding.FragmentFoodBinding
-import com.example.mefora.ui.food.FoodViewModel
+import com.example.mefora.ui.patient.food.FoodViewModel
 
 class DoctorFragment : Fragment() {
     private var _binding: FragmentDoctorBinding? = null

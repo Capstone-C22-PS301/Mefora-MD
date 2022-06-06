@@ -1,4 +1,4 @@
-package com.example.mefora.ui.doctor.fragments
+package com.example.mefora.ui.patient.doctor.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
