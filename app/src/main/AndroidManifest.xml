@@ -17,9 +17,6 @@
             android:name=".ui.doctor.PatientDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.doctor.PatientActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.doctor.ProfileUserActivity"
             android:exported="false" />
         <activity

@@ -7,8 +7,9 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.mefora.R
 import com.example.mefora.databinding.ActivityHomePatientBinding
+import com.example.mefora.R
+
 
 class HomePatientActivity : AppCompatActivity() {
 
