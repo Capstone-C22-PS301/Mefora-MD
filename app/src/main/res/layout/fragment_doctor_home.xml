@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.patient.home.HomeFragment">
-
+    tools:context=".ui.doctor.fragments.DoctorHomeFragment">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textHome"
@@ -37,10 +36,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="How Are You Today"
-        android:textStyle="bold"
         android:textAlignment="textStart"
         android:textColor="@color/white"
         android:textSize="32sp"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="@+id/namePatient"
         app:layout_constraintTop_toBottomOf="@+id/namePatient" />
 
@@ -63,13 +62,56 @@
         android:layout_marginTop="24dp"
         android:text="Rekomendasi Makanan Hari Ini"
         android:textAlignment="textStart"
-        android:textStyle="bold"
         android:textColor="@color/black"
-        android:textSize="20sp"
+        android:textSize="23.5sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/textDate"
         app:layout_constraintTop_toBottomOf="@+id/textHome" />
+
+
+    <ImageView
+        android:id="@+id/iv_morning"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:src="@drawable/morning_icon"
+        app:layout_constraintEnd_toStartOf="@+id/iv_afternoon"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textMessage"
+        android:contentDescription="morning icon" />
+
+    <ImageView
+        android:id="@+id/iv_afternoon"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:src="@drawable/afternoon_icon"
+        app:layout_constraintEnd_toStartOf="@+id/iv_night"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_morning"
+        app:layout_constraintTop_toBottomOf="@+id/textMessage"
+        android:contentDescription="afternoon icon" />
+
+    <ImageView
+        android:id="@+id/iv_night"
+        android:layout_width="80dp"
+        android:layout_height="0dp"
+        android:src="@drawable/night_icon"
+        app:layout_constraintEnd_toEndOf="@+id/textMessage"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_afternoon"
+        app:layout_constraintTop_toBottomOf="@+id/textMessage"
+        android:contentDescription="night icon" />
+
+    <FrameLayout
+        android:id="@+id/fl_home_items"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textMessage"
+        app:layout_constraintStart_toStartOf="@+id/textWelcome"
+        app:layout_constraintTop_toBottomOf="@+id/iv_afternoon" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
