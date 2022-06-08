@@ -22,8 +22,5 @@ class AuthenticationActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .add(R.id.container, LoginFragment())
             .commit()
-
-
-
     }
 }

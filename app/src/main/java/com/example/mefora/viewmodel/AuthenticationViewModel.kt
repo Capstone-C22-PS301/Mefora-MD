@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.mefora.api.ApiConfig
+import com.example.mefora.api.model.CreateUserResponse
 import com.example.mefora.util.DataResponse
 import com.google.firebase.auth.FirebaseAuth
 import retrofit2.Call
@@ -44,33 +45,36 @@ class AuthenticationViewModel : ViewModel() {
                     if (it.isSuccessful) {
                         firebaseAuth.currentUser?.uid?.let { uid ->
                             ApiConfig.getApiService().createUser(uid, false).enqueue(object :
-                                Callback<DataResponse<>> {
-                                override fun onFailure(call: Call<DataResponse>, t: Throwable) {
+                                Callback<DataResponse<CreateUserResponse>> {
+                                override fun onFailure(
+                                    call: Call<DataResponse<CreateUserResponse>>,
+                                    t: Throwable
+                                ) {
                                     _authenticationData.value =
-                                        DataResponse.Error(t.message.toString())
+                                        DataResponse.Failed(t.message.toString())
                                 }
 
                                 override fun onResponse(
-                                    call: Call<DataResponse>,
-                                    response: Response<DataResponse>
+                                    call: Call<DataResponse<CreateUserResponse>>,
+                                    response: Response<DataResponse<CreateUserResponse>>
                                 ) {
                                     if (response.isSuccessful) {
-                                        _authenticationData.value = response.body()
+                                        _authenticationData.value =
+                                            DataResponse.Success(uid)
                                     } else {
                                         _authenticationData.value =
-                                            DataResponse.Error(response.message())
+                                            DataResponse.Failed(response.message())
                                     }
                                 }
-
                             })
                         }
                     } else {
                         _authenticationData.value =
-                            DataResponse.Error(it.exception?.message.toString())
+                            DataResponse.Failed(it.exception?.message.toString())
                     }
                 }
             } else {
-                _authenticationData.value = DataResponse.Error(task.exception?.message.toString())
+                _authenticationData.value = DataResponse.Failed(task.exception?.message.toString())
             }
             _loadingAuthentication.value = false
         }
@@ -87,34 +91,36 @@ class AuthenticationViewModel : ViewModel() {
                             if (it.isSuccessful) {
                                 firebaseAuth.currentUser?.uid?.let { uid ->
                                     val client = ApiConfig.getApiService().createUser(uid, true)
-                                    client.enqueue(object : Callback<DataResponse> {
+                                    client.enqueue(object :
+                                        Callback<DataResponse<CreateUserResponse>> {
                                         override fun onResponse(
-                                            call: Call<DataResponse>,
-                                            response: Response<DataResponse>
+                                            call: Call<DataResponse<CreateUserResponse>>,
+                                            response: Response<DataResponse<CreateUserResponse>>
                                         ) {
                                             if (response.isSuccessful) {
                                                 _authenticationData.value =
-                                                    DataResponse.Success(firebaseAuth.currentUser?.uid)
+                                                    DataResponse.Success(uid)
                                             } else {
                                                 _authenticationData.value =
-                                                    DataResponse.Error(response.message())
+                                                    DataResponse.Failed(response.message())
                                             }
                                         }
+
                                         override fun onFailure(
-                                            call: Call<DataResponse>,
+                                            call: Call<DataResponse<CreateUserResponse>>,
                                             t: Throwable
                                         ) {
                                             _authenticationData.value =
-                                                DataResponse.Error(t.message.toString())
+                                                DataResponse.Failed(t.message.toString())
                                         }
 
                                     })
                                 }
                                 _authenticationData.value =
-                                    DataResponse.Success(firebaseAuth.currentUser?.uid)
+                                    DataResponse.Success(firebaseAuth.currentUser?.uid.toString())
                             } else {
                                 _authenticationData.value =
-                                    DataResponse.Error(it.exception?.message.toString())
+                                    DataResponse.Failed(it.exception?.message.toString())
                             }
                         }
                 }
