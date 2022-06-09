@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.home.HomeFragment">
+    tools:context=".ui.patient.home.HomeFragment">
 
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textHome"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:background="@drawable/rounded_top"
+        android:background="@drawable/rounded_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

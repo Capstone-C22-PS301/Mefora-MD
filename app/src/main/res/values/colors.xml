@@ -6,13 +6,18 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="light_grey">#F8FAFF</color>
     <color name="white_dim">#BFFFFFFF</color>
     <color name="black_dim">#BF000000</color>
+    <color name="black08_dim_75">#BF080C2F</color>
+    <color name="black08_dim_65">#A6080C2F</color>
+    <color name="black08_dim_50">#80080C2F</color>
     <color name="light_blue">#51A8FF</color>
     <color name="grey">#6B6B6B</color>
-    <color name="grey_96">#969696</color>
+    <color name="grey96">#969696</color>
     <color name="light_blue_button">#2C98F0</color>
+    <color name="light_pink_button">#FE9C80</color>
     <color name="light_red_button">#F02C2C</color>
-    
 <!--    <color name="blue_calm">#51A8FF</color>-->
 </resources>
