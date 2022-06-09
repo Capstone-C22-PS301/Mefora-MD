@@ -116,7 +116,7 @@
             android:layout_width="320dp"
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
-            android:background="@color/grey_96"
+            android:background="@color/grey96"
             app:layout_constraintStart_toStartOf="@+id/tv_doctor_id"
             app:layout_constraintTop_toBottomOf="@+id/tv_doctor_id" />
 
@@ -153,7 +153,7 @@
             android:layout_width="320dp"
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
-            android:background="@color/grey_96"
+            android:background="@color/grey96"
             app:layout_constraintStart_toStartOf="@+id/tv_fullname"
             app:layout_constraintTop_toBottomOf="@+id/tv_fullname" />
 
@@ -190,7 +190,7 @@
             android:layout_width="320dp"
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
-            android:background="@color/grey_96"
+            android:background="@color/grey96"
             app:layout_constraintStart_toStartOf="@+id/tv_nickname"
             app:layout_constraintTop_toBottomOf="@+id/tv_nickname" />
 
@@ -226,7 +226,7 @@
             android:layout_width="320dp"
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
-            android:background="@color/grey_96"
+            android:background="@color/grey96"
             app:layout_constraintStart_toStartOf="@+id/tv_address"
             app:layout_constraintTop_toBottomOf="@+id/tv_address" />
 
