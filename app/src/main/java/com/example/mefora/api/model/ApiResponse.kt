@@ -118,3 +118,27 @@ data class GetPatientListResponseItem(
     val updatedAt: String? = null
 )
 
+data class GetPredictionResponse(
+
+    @field:SerializedName("deployedModelId")
+    val deployedModelId: String? = null,
+
+    @field:SerializedName("model")
+    val model: String? = null,
+
+    @field:SerializedName("predictions")
+    val predictions: List<PredictionsItem?>? = null,
+
+    @field:SerializedName("modelDisplayName")
+    val modelDisplayName: String? = null
+)
+
+data class PredictionsItem(
+
+    @field:SerializedName("output_2")
+    val output2: List<String?>? = null,
+
+    @field:SerializedName("output_1")
+    val output1: List<Double?>? = null
+)
+

@@ -103,4 +103,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.5'
     implementation "androidx.security:security-crypto:1.1.0-alpha03"
 
+    //QRCode
+
+    implementation("androidmads.library.qrgenearator:QRGenearator:1.0.4")
+    implementation 'com.google.zxing:core:3.3.2'
 }
+
