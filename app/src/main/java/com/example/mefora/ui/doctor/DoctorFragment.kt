@@ -1,5 +1,6 @@
 package com.example.mefora.ui.doctor
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -7,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.mefora.databinding.FragmentDoctorBinding
+import com.example.mefora.ui.patient.doctor.DoctorScanActivity
 import com.example.mefora.ui.patient.food.FoodViewModel
 
 class DoctorFragment : Fragment() {
@@ -26,6 +28,10 @@ class DoctorFragment : Fragment() {
 
         _binding = FragmentDoctorBinding.inflate(inflater, container, false)
         val view = binding.root
+
+        // go to Doctor Scan Activity
+        val intent = Intent(activity, DoctorScanActivity::class.java)
+        startActivity(intent)
 
 //        notificationsViewModel.text.observe(viewLifecycleOwner) {
 //            binding.textDoctor.text = it

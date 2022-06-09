@@ -17,11 +17,13 @@
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/ic_notifications_black_24dp.xml" value="0.1195" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/ic_whatsapp_icon.xml" value="0.244" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/rect_top.xml" value="0.254" />
+        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/rounded_bottom.xml" value="0.1905" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/rounded_outline.xml" value="0.1905" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/rounded_top.xml" value="0.1" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout-v28/fragment_profile.xml" value="0.176" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_authentication.xml" value="0.18229166666666666" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_detail_doctor.xml" value="0.18229166666666666" />
+        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_doctor_detail.xml" value="0.13645833333333332" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_doctor_scan.xml" value="0.152" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_home_patient.xml" value="0.2" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_main.xml" value="0.2484375" />
@@ -36,11 +38,12 @@
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_doctor_user_profile.xml" value="0.2" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_food.xml" value="0.1" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_home.xml" value="0.12" />
-        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_login.xml" value="0.18229166666666666" />
+        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_login.xml" value="0.152" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_notifications.xml" value="0.10833333333333334" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_profile.xml" value="0.152" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_prohibited_food.xml" value="0.1" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_recommend_food.xml" value="0.1" />
+        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_register.xml" value="0.22456140350877193" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_routine_food.xml" value="0.12" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/home_patient.xml" value="0.38835794960903564" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/item_row_food.xml" value="0.4" />

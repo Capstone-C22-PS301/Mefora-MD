@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mefora">
 
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -30,7 +31,7 @@
         <activity
             android:name=".ui.HomePatientActivity"
             android:exported="true"
-            android:label="@string/title_activity_home_patient">
+            android:label="@string/title_activity_home_patient" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
