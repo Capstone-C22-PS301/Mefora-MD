@@ -1,33 +1,34 @@
-package com.example.mefora.ui.authentication
+package com.example.mefora.ui.doctor.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.activity.viewModels
-import androidx.appcompat.app.AppCompatActivity
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.example.mefora.R
-import com.example.mefora.databinding.FragmentRegisterBinding
+import com.example.mefora.api.model.GetPatientListResponse
+import com.example.mefora.api.model.GetPatientListResponseItem
+import com.example.mefora.databinding.FragmentDoctorPatientPageBinding
+import com.example.mefora.ui.doctor.adapter.PatientAdapter
 import com.example.mefora.util.DataResponse
-import com.example.mefora.viewmodel.AuthenticationViewModel
+import com.example.mefora.viewmodel.doctor.DoctorMainViewModel
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
-
-private lateinit var authenticationViewModel: AuthenticationViewModel
-
-lateinit var binding: FragmentRegisterBinding
+private lateinit var binding: FragmentDoctorPatientPageBinding
+private lateinit var viewModel: DoctorMainViewModel
+private lateinit var adapter: PatientAdapter
 
 /**
  * A simple [Fragment] subclass.
- * Use the [RegisterFragment.newInstance] factory method to
+ * Use the [DoctorPatientPageFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class RegisterFragment : Fragment() {
+class DoctorPatientPageFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -44,35 +45,31 @@ class RegisterFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        // Inflate the layout for this fragment
-        binding = FragmentRegisterBinding.inflate(inflater, container, false)
+        binding = FragmentDoctorPatientPageBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        authenticationViewModel = ViewModelProvider(this)[AuthenticationViewModel::class.java]
-//        binding.btnToLogin.setOnClickListener {
-//            activity?.supportFragmentManager?.beginTransaction()
-//                ?.replace(R.id.fl_authentication, LoginFragment())?.commit()
-//        }
-//
-        binding.btnToRegister.setOnClickListener {
-            authenticationViewModel.register(
-                binding.etEmail.text.toString(),
-                binding.etPassword.text.toString(),
-                binding.etConfirmPassword.text.toString()
-            )
-            authenticationViewModel.authenticationData.observe(viewLifecycleOwner) { dataResponse ->
-                when (dataResponse) {
+        viewModel = ViewModelProvider(this)[DoctorMainViewModel::class.java]
+
+        binding.apply {
+            viewModel.patientListData.observe(viewLifecycleOwner) {
+                when(it){
                     is DataResponse.Success -> {
-                        (activity as AppCompatActivity).supportFragmentManager.beginTransaction()
-                            .replace(R.id.fl_authentication, LoginFragment()).commit()
+                        val data = (it.data?.getPatientListResponse as List<*>).filterIsInstance<GetPatientListResponseItem>()
+                        recyclerView.adapter = PatientAdapter(data)
                     }
-                    else -> {}
+                    is DataResponse.Failed -> {
+                        Toast.makeText(parentFragment?.context, it.msg, Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
+            btnAddPatient.setOnClickListener{
+                viewModel.addPatientToList()
+            }
         }
+
     }
 
     companion object {
@@ -82,17 +79,16 @@ class RegisterFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment RegisterFragment.
+         * @return A new instance of fragment DocotrPatientPageFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            RegisterFragment().apply {
+            DoctorPatientPageFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
                 }
             }
     }
-
 }
