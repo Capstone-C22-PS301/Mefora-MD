@@ -1,5 +1,6 @@
 pluginManagement {
     repositories {
+        jcenter()
         gradlePluginPortal()
         google()
         mavenCentral()
@@ -9,9 +10,11 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+        jcenter()
         google()
         mavenCentral()
         maven { url = uri("https://dl.bintray.com/kotlin/kotlin-eap") }
+        maven { url 'https://jitpack.io' }
     }
 }
 rootProject.name = "Mefora"

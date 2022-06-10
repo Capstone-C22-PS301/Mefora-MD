@@ -11,6 +11,8 @@
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/ic_arrow_back_button.xml" value="0.1905" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/ic_baseline_date_range_24.xml" value="0.1965" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/ic_baseline_format_list_bulleted_24.xml" value="0.1965" />
+        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/ic_circle_24.xml" value="0.1775" />
+        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/ic_circle_full_24.xml" value="0.1775" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/ic_dashboard_black_24dp.xml" value="0.1195" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/ic_home_black_24dp.xml" value="0.1195" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1195" />
@@ -28,6 +30,7 @@
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_home_patient.xml" value="0.2" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_main.xml" value="0.2484375" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_main2.xml" value="0.16041666666666668" />
+        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_on_boarding.xml" value="0.2" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_patient.xml" value="0.264" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_patient_detail.xml" value="0.18229166666666666" />
         <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_profile_user.xml" value="0.18229166666666666" />

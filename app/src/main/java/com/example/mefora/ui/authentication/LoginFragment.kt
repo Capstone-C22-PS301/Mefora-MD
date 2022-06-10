@@ -13,6 +13,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.commit
 import com.example.mefora.R
 import com.example.mefora.databinding.FragmentLoginBinding
 import kotlin.math.sign
@@ -38,7 +39,14 @@ class LoginFragment : Fragment() {
         val applicationContext = activity?.applicationContext
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(view: View) {
-                Toast.makeText(applicationContext, "Masuk", Toast.LENGTH_SHORT).show()
+                //replace this fragment with sign up fragment
+                val signUpFragment = RegisterFragment()
+                val fragmentManager = activity?.supportFragmentManager
+                fragmentManager?.commit {
+                    replace(R.id.fragment_container, signUpFragment)
+                }
+
+
             }
 
             override fun updateDrawState(ds: TextPaint) {
