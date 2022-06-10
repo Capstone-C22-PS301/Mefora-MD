@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/doctorUserProfileFragment">
+
+    <fragment
+        android:id="@+id/navigation_doctor"
+        android:name="com.example.mefora.ui.doctor.DoctorFragment"
+        android:label="@string/title_doctor"
+        tools:layout="@layout/fragment_doctor" />
+    <fragment
+        android:id="@+id/doctorHomeFragment"
+        android:name="com.example.mefora.ui.doctor.fragments.DoctorHomeFragment"
+        android:label="fragment_doctor_home"
+        tools:layout="@layout/fragment_doctor_home" />
+    <fragment
+        android:id="@+id/doctorUserProfileFragment"
+        android:name="com.example.mefora.ui.doctor.fragments.DoctorUserProfileFragment"
+        android:label="fragment_doctor_user_profile"
+        tools:layout="@layout/fragment_doctor_user_profile" />
+    <fragment
+        android:id="@+id/doctorPatientPageFragment"
+        android:name="com.example.mefora.ui.doctor.fragments.DoctorPatientPageFragment"
+        android:label="fragment_doctor_patient_page"
+        tools:layout="@layout/fragment_doctor_patient_page" />
+</navigation>

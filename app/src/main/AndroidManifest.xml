@@ -2,8 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.mefora">
 
-
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -12,6 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Mefora">
+        <activity
+            android:name=".ui.doctor.HomeDoctorActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.patient.doctor.DoctorScanActivity"
             android:exported="false" />
@@ -22,7 +25,6 @@
             android:name=".ui.doctor.PatientDetailActivity"
             android:exported="false" />
         <activity
-
             android:name=".ui.OnBoardingActivity"
             android:exported="false" />
         <activity
@@ -34,7 +36,7 @@
         <activity
             android:name=".ui.HomePatientActivity"
             android:exported="true"
-            android:label="@string/title_activity_home_patient" >
+            android:label="@string/title_activity_home_patient">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

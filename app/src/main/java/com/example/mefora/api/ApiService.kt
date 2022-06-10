@@ -83,4 +83,24 @@ interface ApiService {
         @Body instances: Instances
     ): Call<GetPredictionResponse>
 
+    @POST("http://localhost:8080/api/userDiseases")
+    @Headers(
+        "Accept: application/json",
+        "Content-Type: application/json"
+    )
+    fun createUserDisease(
+        @Body patient_uid: String,
+        @Body disease_id: String,
+        @Body disease_name: String
+    ): Call<AddDiseaseResponse>
+
+    @GET("http://localhost:8080/api/userDiseases")
+    @Headers(
+        "Accept: application/json",
+        "Content-Type: application/json"
+    )
+    fun getUserDisease(
+        @Header("patient_uid") auth: String,
+    ): Call<GetDiseaseResponse>
+
 }

@@ -3,9 +3,7 @@ package com.example.mefora.viewmodel.doctor
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.mefora.api.ApiConfig
-import com.example.mefora.api.model.CreatePatientListResponse
-import com.example.mefora.api.model.GetPatientListResponse
-import com.example.mefora.api.model.GetUserResponse
+import com.example.mefora.api.model.*
 import com.example.mefora.util.DataResponse
 import com.google.firebase.auth.FirebaseAuth
 import retrofit2.Call
@@ -33,6 +31,77 @@ class DoctorMainViewModel : ViewModel() {
 
     private val _loadingDoctorData = MutableLiveData<Boolean>()
     val loadingDoctorData: MutableLiveData<Boolean> = _loadingDoctorData
+
+    private val _patientData = MutableLiveData<DataResponse<GetUserResponse>>()
+    val patientData: MutableLiveData<DataResponse<GetUserResponse>> = _patientData
+
+    private val _loadingPatientData = MutableLiveData<Boolean>()
+    val loadingPatientData: MutableLiveData<Boolean> = _loadingPatientData
+
+    private val _patientDiseaseData = MutableLiveData<DataResponse<GetDiseaseResponse>>()
+    val patientDiseaseData: MutableLiveData<DataResponse<GetDiseaseResponse>> = _patientDiseaseData
+
+    private val _loadingPatientDiseaseData = MutableLiveData<Boolean>()
+    val loadingPatientDiseaseData: MutableLiveData<Boolean> = _loadingPatientDiseaseData
+
+    private val _deletePatientData = MutableLiveData<DataResponse<DeleteUserResponse>>()
+    val deletePatientData: MutableLiveData<DataResponse<DeleteUserResponse>> = _deletePatientData
+
+    private val _loadingDeletePatientData = MutableLiveData<Boolean>()
+    val loadingDeletePatientData: MutableLiveData<Boolean> = _loadingDeletePatientData
+
+
+
+    fun deletePatientData(patientUID: String){
+        _loadingDeletePatientData.value = true
+        ApiConfig.getApiService().deleteUser(patientUID).enqueue(object : Callback<DeleteUserResponse> {
+            override fun onFailure(call: Call<DeleteUserResponse>, t: Throwable) {
+                _loadingDeletePatientData.value = false
+                _deletePatientData.value = DataResponse.Failed(t.message.toString())
+            }
+
+            override fun onResponse(call: Call<DeleteUserResponse>, response: Response<DeleteUserResponse>) {
+                _loadingDeletePatientData.value = false
+                _deletePatientData.value = DataResponse.Success(response.body()!!)
+            }
+        })
+    }
+
+    fun getPatientDiseaseData(){
+        _loadingPatientDiseaseData.value = true
+        ApiConfig.getApiService().getUserDisease(firebaseAuth.currentUser?.uid!!).enqueue(object : Callback<GetDiseaseResponse> {
+            override fun onResponse(call: Call<GetDiseaseResponse>, response: Response<GetDiseaseResponse>) {
+                if (response.isSuccessful) {
+                    response.body()?.let {
+                        _patientDiseaseData.value = DataResponse.Success(it)
+                    }
+                } else {
+                    _patientDiseaseData.value = DataResponse.Failed(response.message())
+                }
+                _loadingPatientDiseaseData.value = false
+            }
+
+            override fun onFailure(call: Call<GetDiseaseResponse>, t: Throwable) {
+                _patientDiseaseData.value = DataResponse.Failed(t.message.toString())
+                _loadingPatientDiseaseData.value = false
+            }
+        })
+    }
+
+    fun getPatientData(patientUID: String){
+        _loadingPatientData.value = true
+        ApiConfig.getApiService().getUser(patientUID).enqueue(object : Callback<GetUserResponse> {
+            override fun onFailure(call: Call<GetUserResponse>, t: Throwable) {
+                _loadingPatientData.value = false
+                _patientData.value = DataResponse.Failed(t.message.toString())
+            }
+
+            override fun onResponse(call: Call<GetUserResponse>, response: Response<GetUserResponse>) {
+                _loadingPatientData.value = false
+                _patientData.value = DataResponse.Success(response.body()!!)
+            }
+        })
+    }
 
     fun getPatientList(){
         _loadingPatientListData.value = true

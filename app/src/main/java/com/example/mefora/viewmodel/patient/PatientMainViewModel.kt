@@ -32,25 +32,48 @@ class PatientMainViewModel : ViewModel() {
     private val _loadingDoctorData = MutableLiveData<Boolean>()
     val loadingDoctorData: LiveData<Boolean> = _loadingDoctorData
 
-//    fun getPredictionData(){
-//        _loadingFoodData.value = true
-//        val instances = Instances()
-//        ApiConfig.getApiService().getPrediction().enqueue(object : Callback<GetUserResponse> {
-//            override fun onFailure(call: retrofit2.Call<GetUserResponse>, t: Throwable) {
-//                _loadingFoodData.value = false
-//                _foodData.value = DataResponse.Failed(t.message)
-//            }
-//
-//            override fun onResponse(call: retrofit2.Call<GetUserResponse>, response: retrofit2.Response<GetUserResponse>) {
-//                _loadingFoodData.value = false
-//                if (response.isSuccessful) {
-//                    _foodData.value = DataResponse.Success(response.body())
-//                } else {
-//                    _foodData.value = DataResponse.Failed(response.message())
-//                }
-//            }
-//        })
-//    }
+    fun getDoctorData(){
+        _loadingDoctorData.value = true
+        ApiConfig.getApiService().getUser(firebaseAuth.currentUser?.uid!!).enqueue(object : Callback<GetUserResponse>{
+            override fun onFailure(call: retrofit2.Call<GetUserResponse>, t: Throwable) {
+                _loadingDoctorData.value = false
+                _doctorData.value = DataResponse.Failed(t.message.toString())
+            }
+
+            override fun onResponse(call: retrofit2.Call<GetUserResponse>, response: retrofit2.Response<GetUserResponse>) {
+                _loadingDoctorData.value = false
+                if(response.isSuccessful){
+                    response.body()?.let {
+                        _doctorData.value = DataResponse.Success(it)
+                    }
+                }else{
+                    _doctorData.value = DataResponse.Failed(response.message())
+                }
+            }
+        })
+    }
+
+    fun getFoodData(){
+        _loadingFoodData.value = true
+        ApiConfig.getApiService().getUser(firebaseAuth.currentUser?.uid!!).enqueue(object : Callback<GetUserResponse>{
+            override fun onFailure(call: retrofit2.Call<GetUserResponse>, t: Throwable) {
+                _loadingFoodData.value = false
+                _foodData.value = DataResponse.Failed(t.message.toString())
+            }
+
+            override fun onResponse(call: retrofit2.Call<GetUserResponse>, response: retrofit2.Response<GetUserResponse>) {
+                _loadingFoodData.value = false
+                if(response.isSuccessful){
+                    response.body()?.let {
+                        _foodData.value = DataResponse.Success(it)
+                    }
+                }else{
+                    _foodData.value = DataResponse.Failed(response.message())
+                }
+            }
+        })
+    }
+
 
     fun getPatientData() {
         _loadingPatientData.value = true

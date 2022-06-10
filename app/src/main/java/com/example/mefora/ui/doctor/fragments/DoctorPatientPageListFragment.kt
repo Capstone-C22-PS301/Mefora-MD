@@ -1,5 +1,6 @@
 package com.example.mefora.ui.doctor.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,6 +12,8 @@ import com.example.mefora.R
 import com.example.mefora.api.model.GetPatientListResponse
 import com.example.mefora.api.model.GetPatientListResponseItem
 import com.example.mefora.databinding.FragmentDoctorPatientPageBinding
+import com.example.mefora.ui.doctor.PatientDetailActivity
+import com.example.mefora.ui.doctor.QRScannerActivity
 import com.example.mefora.ui.doctor.adapter.PatientAdapter
 import com.example.mefora.util.DataResponse
 import com.example.mefora.viewmodel.doctor.DoctorMainViewModel
@@ -55,18 +58,29 @@ class DoctorPatientPageFragment : Fragment() {
 
         binding.apply {
             viewModel.patientListData.observe(viewLifecycleOwner) {
-                when(it){
+                when (it) {
                     is DataResponse.Success -> {
-                        val data = (it.data?.getPatientListResponse as List<*>).filterIsInstance<GetPatientListResponseItem>()
-                        recyclerView.adapter = PatientAdapter(data)
+                        val data =
+                            (it.data?.getPatientListResponse as List<*>).filterIsInstance<GetPatientListResponseItem>()
+                        recyclerView.adapter =
+                            PatientAdapter(data, object : PatientAdapter.OnItemClickListener {
+                                override fun onItemClick(item: GetPatientListResponseItem) {
+                                    Intent(context, PatientDetailActivity::class.java).also { intent ->
+                                        intent.putExtra(PARCEL_EXTRA, item)
+                                        startActivity(intent)
+                                    }
+                                }
+                            })
                     }
                     is DataResponse.Failed -> {
                         Toast.makeText(parentFragment?.context, it.msg, Toast.LENGTH_SHORT).show()
                     }
                 }
             }
-            btnAddPatient.setOnClickListener{
-                viewModel.addPatientToList()
+            btnAddPatient.setOnClickListener {
+                Intent(parentFragment?.activity, QRScannerActivity::class.java).also {
+                    startActivity(it)
+                }
             }
         }
 
@@ -90,5 +104,7 @@ class DoctorPatientPageFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+
+        const val PARCEL_EXTRA = "PARCEL_EXTRA"
     }
 }

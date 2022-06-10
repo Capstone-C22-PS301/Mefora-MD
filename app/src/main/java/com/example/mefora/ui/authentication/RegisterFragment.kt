@@ -52,24 +52,17 @@ class RegisterFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         authenticationViewModel = ViewModelProvider(this)[AuthenticationViewModel::class.java]
-//        binding.btnToLogin.setOnClickListener {
-//            activity?.supportFragmentManager?.beginTransaction()
-//                ?.replace(R.id.fl_authentication, LoginFragment())?.commit()
-//        }
-//
-        binding.btnToRegister.setOnClickListener {
-            authenticationViewModel.register(
-                binding.etEmail.text.toString(),
-                binding.etPassword.text.toString(),
-                binding.etConfirmPassword.text.toString()
-            )
-            authenticationViewModel.authenticationData.observe(viewLifecycleOwner) { dataResponse ->
-                when (dataResponse) {
-                    is DataResponse.Success -> {
-                        (activity as AppCompatActivity).supportFragmentManager.beginTransaction()
-                            .replace(R.id.fl_authentication, LoginFragment()).commit()
-                    }
-                    else -> {}
+        binding.apply {
+            btnRegister.setOnClickListener {
+                val password = inputPassword.editText?.text.toString()
+                val confirmPassword = inputConfirmPassword.editText?.text.toString()
+                if (password == confirmPassword) {
+                    authenticationViewModel.doDoctorRegister(
+                        inputEmail.editText?.text.toString(),
+                        inputPassword.editText?.text.toString()
+                    )
+                } else {
+                    inputConfirmPassword.error = "Password not match"
                 }
             }
         }
