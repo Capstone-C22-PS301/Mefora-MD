@@ -1,26 +1,24 @@
-package com.example.mefora.ui
+package com.example.mefora.ui.doctor
 
-import android.os.Bundle
-import com.google.android.material.bottomnavigation.BottomNavigationView
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
-import com.example.mefora.databinding.ActivityHomePatientBinding
 import com.example.mefora.R
+import com.example.mefora.databinding.ActivityHomeDoctorBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
+class HomeDoctorActivity : AppCompatActivity() {
 
-class HomePatientActivity : AppCompatActivity() {
-
-    private lateinit var binding: ActivityHomePatientBinding
+    private lateinit var binding: ActivityHomeDoctorBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        supportActionBar?.hide()
-        binding = ActivityHomePatientBinding.inflate(layoutInflater)
+        binding = ActivityHomeDoctorBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        supportActionBar?.hide()
 
         val navView: BottomNavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_activity_home_patient)
@@ -29,10 +27,10 @@ class HomePatientActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.doctorHomeFragment,
-                R.id.doctorPatientPageFragment,
+                R.id.navigation_home,
+                R.id.navigation_food,
                 R.id.navigation_doctor,
-                R.id.doctorUserProfileFragment
+                R.id.navigation_profile
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

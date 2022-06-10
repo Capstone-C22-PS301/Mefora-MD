@@ -6,21 +6,24 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.mefora.R
 import com.example.mefora.databinding.ActivityDoctorScanBinding
+import com.google.firebase.auth.FirebaseAuth
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
 import com.google.zxing.qrcode.encoder.QRCode
 
 
 class DoctorScanActivity : AppCompatActivity() {
+
+    private val firebaseAuth = FirebaseAuth.getInstance()
+
     private var binding: ActivityDoctorScanBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityDoctorScanBinding.inflate(layoutInflater)
         setContentView(binding?.root)
 
-        val text = "New Jersey Waifuku"
         val encoder = QRCodeWriter()
-        val bitMatrix = encoder.encode(text, BarcodeFormat.QR_CODE, 512, 512)
+        val bitMatrix = encoder.encode(firebaseAuth.currentUser?.uid.toString(), BarcodeFormat.QR_CODE, 512, 512)
         val width = bitMatrix.width
         val height = bitMatrix.height
         val bmp = Bitmap.createBitmap(width, height, Bitmap.Config.RGB_565)
