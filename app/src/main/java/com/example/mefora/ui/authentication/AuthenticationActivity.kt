@@ -24,7 +24,6 @@ class AuthenticationActivity : AppCompatActivity() {
         // add fragment to activity
         val mFragmentManager = supportFragmentManager
         val mHomeFragment = LoginFragment()
-        val fragment = mFragmentManager.findFragmentByTag(LoginFragment::class.java.simpleName)
         mFragmentManager.commit {
             add(R.id.fragment_container, mHomeFragment, LoginFragment::class.java.simpleName)
         }
