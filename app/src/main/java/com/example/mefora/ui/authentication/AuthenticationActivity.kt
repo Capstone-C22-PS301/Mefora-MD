@@ -15,11 +15,6 @@ import com.google.firebase.ktx.Firebase
 
 class AuthenticationActivity : AppCompatActivity() {
     private val authenticationViewModel by viewModels<AuthenticationViewModel>()
-//    val auth = Firebase.auth
-
-    override fun onStart() {
-        super.onStart()
-    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

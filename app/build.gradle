@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-parcelize'
     id 'kotlin-kapt'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -100,6 +101,12 @@ dependencies {
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'pub.devrel:easypermissions:3.0.0'
     implementation 'com.google.firebase:firebase-auth-ktx:21.0.5'
-    implementation 'com.google.zxing:core:3.3.2'
+    implementation "androidx.security:security-crypto:1.1.0-alpha03"
 
+    //QRCode
+    implementation 'com.github.yuriy-budiyev:code-scanner:2.3.2'
+    implementation("androidmads.library.qrgenearator:QRGenearator:1.0.4")
+    implementation 'com.google.zxing:core:3.3.2'
 }
+
+
