@@ -1,4 +1,4 @@
-package com.example.mefora.ui.patient.food.viewpager
+package com.example.mefora.ui.patient.viewpager
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -14,10 +14,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [RoutineFoodFragment.newInstance] factory method to
+ * Use the [RecommendFoodFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class RoutineFoodFragment : Fragment() {
+class RecommendFoodFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -35,7 +35,7 @@ class RoutineFoodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_routine_food, container, false)
+        return inflater.inflate(R.layout.fragment_recommend_food, container, false)
     }
 
     companion object {
@@ -45,12 +45,12 @@ class RoutineFoodFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment RoutineFoodFragment.
+         * @return A new instance of fragment RecommendFoodFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            RoutineFoodFragment().apply {
+            RecommendFoodFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)

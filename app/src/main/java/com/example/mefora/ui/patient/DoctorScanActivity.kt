@@ -1,15 +1,13 @@
-package com.example.mefora.ui.patient.doctor
+package com.example.mefora.ui.patient
 
 import android.graphics.Bitmap
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.mefora.R
 import com.example.mefora.databinding.ActivityDoctorScanBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.zxing.BarcodeFormat
 import com.google.zxing.qrcode.QRCodeWriter
-import com.google.zxing.qrcode.encoder.QRCode
 
 
 class DoctorScanActivity : AppCompatActivity() {

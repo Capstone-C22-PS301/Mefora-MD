@@ -103,4 +103,12 @@ interface ApiService {
         @Header("patient_uid") auth: String,
     ): Call<GetDiseaseResponse>
 
+    @GET("http://localhost:8080/api/diseases")
+    @Headers(
+        "Accept: application/json",
+        "Content-Type: application/json"
+    )
+    fun getAllDisease(
+    ): Call<GetDiseaseResponse>
+
 }

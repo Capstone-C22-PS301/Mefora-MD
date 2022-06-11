@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.mefora.R
+import com.example.mefora.api.model.GetDiseaseResponseItem
 import com.example.mefora.databinding.FragmentDiseasePickerBinding
 import com.example.mefora.ui.doctor.adapter.DiseasePickerAdapter
 import com.example.mefora.viewmodel.doctor.DoctorMainViewModel
@@ -24,7 +26,7 @@ private lateinit var viewModel: DoctorMainViewModel
  * Use the [DiseasePickerFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class DiseasePickerFragment : Fragment() {
+class DiseasePickerFragment : DialogFragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -49,12 +51,31 @@ class DiseasePickerFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[DoctorMainViewModel::class.java]
+        val bundle = this.arguments
         binding.apply {
-            rc.adapter = DiseasePickerAdapter()
+            viewModel.getDiseaseData()
+            viewModel.diseaseData.observe(viewLifecycleOwner) {
+                it.data?.getDiseaseResponse?.let { data ->
+                    val dataList = (data as List<*>).filterIsInstance<GetDiseaseResponseItem>()
+                    rc.adapter = DiseasePickerAdapter(
+                        dataList,
+                        object : DiseasePickerAdapter.OnItemClickListener {
+                            override fun onItemClick(item: GetDiseaseResponseItem) {
+                                viewModel.addPatientDisease(
+                                    item.diseaseId.toString(),
+                                    item.diseaseName.toString(),
+                                    bundle?.getString(PARCEL_EXTRA).toString()
+                                )
+                            }
+                        })
+                }
+            }
         }
     }
 
     companion object {
+        const val PARCEL_EXTRA = "PARCEL_EXTRA"
+
         /**
          * Use this factory method to create a new instance of
          * this fragment using the provided parameters.

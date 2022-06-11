@@ -1,4 +1,4 @@
-package com.example.mefora.ui
+package com.example.mefora.ui.root
 
 import android.os.Bundle
 import com.google.android.material.bottomnavigation.BottomNavigationView

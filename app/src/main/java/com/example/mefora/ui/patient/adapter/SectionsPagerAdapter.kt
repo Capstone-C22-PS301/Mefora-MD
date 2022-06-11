@@ -1,12 +1,12 @@
-package com.example.mefora.ui.patient.food.adapter
+package com.example.mefora.ui.patient.adapter
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.mefora.ui.patient.food.viewpager.ProhibitedFoodFragment
-import com.example.mefora.ui.patient.food.viewpager.RecommendFoodFragment
-import com.example.mefora.ui.patient.food.viewpager.RoutineFoodFragment
+import com.example.mefora.ui.patient.viewpager.ProhibitedFoodFragment
+import com.example.mefora.ui.patient.viewpager.RecommendFoodFragment
+import com.example.mefora.ui.patient.viewpager.RoutineFoodFragment
 
 class SectionsPagerAdapter(fragment: Fragment ) : FragmentStateAdapter(fragment) {
 
