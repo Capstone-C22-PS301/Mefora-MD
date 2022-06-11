@@ -20,17 +20,16 @@ class HomeDoctorActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.hide()
 
-        val navView: BottomNavigationView = binding.navView
-        val navController = findNavController(R.id.nav_host_fragment_activity_home_patient)
+        val navView: BottomNavigationView = binding.navViewDoctor
+        val navController = findNavController(R.id.nav_host_fragment_activity_home_doctor)
 
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home,
-                R.id.navigation_food,
-                R.id.navigation_doctor,
-                R.id.navigation_profile
+                R.id.navigation_home_doctor,
+                R.id.navigation_patient,
+                R.id.navigation_profile_doctor
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

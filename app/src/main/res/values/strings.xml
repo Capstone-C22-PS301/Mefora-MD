@@ -14,5 +14,6 @@
     <string name="tab_text_food_1">Prohibited</string>
     <string name="tab_text_food_2">Recommended</string>
     <string name="tab_text_food_3">Routine</string>
+    <string name="title_patient">Patient</string>
 
 </resources>

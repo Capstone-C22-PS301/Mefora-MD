@@ -50,7 +50,7 @@ class DiseasePickerFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this)[DoctorMainViewModel::class.java]
         binding.apply {
-            rc.adapter = DiseasePickerAdapter()
+//            rc.adapter = DiseasePickerAdapter()
         }
     }
 
