@@ -1,4 +1,4 @@
-package com.example.mefora.ui
+package com.example.mefora.ui.root
 
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity

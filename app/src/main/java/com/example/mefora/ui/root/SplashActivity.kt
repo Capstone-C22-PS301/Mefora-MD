@@ -1,4 +1,4 @@
-package com.example.mefora.ui
+package com.example.mefora.ui.root
 
 import android.annotation.SuppressLint
 import android.content.Intent

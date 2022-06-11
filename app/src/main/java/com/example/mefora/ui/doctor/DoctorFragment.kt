@@ -8,8 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.mefora.databinding.FragmentDoctorBinding
-import com.example.mefora.ui.patient.doctor.DoctorScanActivity
-import com.example.mefora.ui.patient.food.FoodViewModel
+import com.example.mefora.ui.patient.DoctorScanActivity
+import com.example.mefora.viewmodel.patient.PatientMainViewModel
 
 class DoctorFragment : Fragment() {
     private var _binding: FragmentDoctorBinding? = null
@@ -24,7 +24,7 @@ class DoctorFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val notificationsViewModel =
-            ViewModelProvider(this)[FoodViewModel::class.java]
+            ViewModelProvider(this)[PatientMainViewModel::class.java]
 
         _binding = FragmentDoctorBinding.inflate(inflater, container, false)
         val view = binding.root
