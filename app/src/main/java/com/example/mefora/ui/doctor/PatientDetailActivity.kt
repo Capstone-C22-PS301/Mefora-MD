@@ -9,6 +9,7 @@ import com.example.mefora.R
 import com.example.mefora.api.model.GetDiseaseResponseItem
 import com.example.mefora.databinding.ActivityPatientDetailBinding
 import com.example.mefora.ui.doctor.adapter.DiseasePatientAdapter
+import com.example.mefora.ui.doctor.fragments.DiseasePickerFragment
 import com.example.mefora.ui.doctor.fragments.DoctorPatientPageFragment
 import com.example.mefora.util.DataResponse
 import com.example.mefora.viewmodel.doctor.DoctorMainViewModel
@@ -29,6 +30,7 @@ class PatientDetailActivity : AppCompatActivity() {
             intent.getStringExtra(DoctorPatientPageFragment.PARCEL_EXTRA).toString()
         )
         binding.apply {
+
             viewModel.patientData.observe(this@PatientDetailActivity) {
                 when (it) {
                     is DataResponse.Success -> {
@@ -40,16 +42,32 @@ class PatientDetailActivity : AppCompatActivity() {
                                 when (response) {
                                     is DataResponse.Success -> {
                                         response.data?.let { data ->
-                                            val dataList = (data.getDiseaseResponse as List<*>).filterIsInstance<GetDiseaseResponseItem>()
+                                            val dataList =
+                                                (data.getDiseaseResponse as List<*>).filterIsInstance<GetDiseaseResponseItem>()
                                             rcDisease.adapter = DiseasePatientAdapter(dataList)
                                         }
                                     }
                                     is DataResponse.Failed -> {
-                                        Toast.makeText(this@PatientDetailActivity, "Fetch Data Failed", Toast.LENGTH_SHORT).show()
+                                        Toast.makeText(
+                                            this@PatientDetailActivity,
+                                            "Fetch Data Failed",
+                                            Toast.LENGTH_SHORT
+                                        ).show()
                                     }
                                 }
                             }
+                            btnAddDisease.setOnClickListener {
+                                val diseaseDialog = DiseasePickerFragment()
+                                val dataBundle = Bundle()
+                                dataBundle.putString(
+                                    DiseasePickerFragment.PARCEL_EXTRA,
+                                    data.uID.toString()
+                                )
+                                diseaseDialog.arguments = dataBundle
+                                diseaseDialog.show(supportFragmentManager, "disease_picker")
+                            }
                         }
+
                     }
                     is DataResponse.Failed -> {
                         it.msg?.let { message ->

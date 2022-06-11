@@ -1,4 +1,4 @@
-package com.example.mefora.ui.patient.doctor
+package com.example.mefora.ui.patient
 
 import android.graphics.Bitmap
 import android.graphics.Color

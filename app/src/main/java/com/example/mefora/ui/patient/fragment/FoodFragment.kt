@@ -1,4 +1,4 @@
-package com.example.mefora.ui.patient.food
+package com.example.mefora.ui.patient.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.mefora.R
 import com.example.mefora.databinding.FragmentFoodBinding
-import com.example.mefora.ui.patient.food.adapter.SectionsPagerAdapter
+import com.example.mefora.ui.patient.adapter.SectionsPagerAdapter
+import com.example.mefora.viewmodel.patient.PatientMainViewModel
 import com.google.android.material.tabs.TabLayoutMediator
 
 
@@ -28,7 +29,7 @@ class FoodFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         val notificationsViewModel =
-            ViewModelProvider(this)[FoodViewModel::class.java]
+            ViewModelProvider(this)[PatientMainViewModel::class.java]
 
         _binding = FragmentFoodBinding.inflate(inflater, container, false)
         val view = binding.root

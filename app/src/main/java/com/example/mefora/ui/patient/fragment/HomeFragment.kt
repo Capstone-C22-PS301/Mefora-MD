@@ -1,4 +1,4 @@
-package com.example.mefora.ui.patient.doctor
+package com.example.mefora.ui.patient.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,12 +6,12 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.mefora.databinding.FragmentDoctorBinding
+import com.example.mefora.databinding.FragmentHomeBinding
+import com.example.mefora.viewmodel.patient.PatientMainViewModel
 
+class HomeFragment : Fragment() {
 
-class DoctorFragment : Fragment() {
-
-    private var _binding: FragmentDoctorBinding? = null
+    private var _binding: FragmentHomeBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -22,12 +22,15 @@ class DoctorFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        val notificationsViewModel =
-//            ViewModelProvider(this)[DoctorViewModel::class.java]
+        val notificationsViewModel =
+            ViewModelProvider(this)[PatientMainViewModel::class.java]
 
-        _binding = FragmentDoctorBinding.inflate(inflater, container, false)
+        _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
 
+//        notificationsViewModel.text.observe(viewLifecycleOwner) {
+//            binding.textHome.text = it
+//        }
         return view
     }
 

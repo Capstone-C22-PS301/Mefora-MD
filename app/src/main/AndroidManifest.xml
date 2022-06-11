@@ -13,30 +13,30 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mefora">
         <activity
-            android:name=".ui.patient.HomePatientActivity"
-            android:exported="false"
-            android:label="@string/title_activity_home_patient" />
-        <activity
-            android:name=".ui.patient.doctor.DoctorScanActivity"
+            android:name=".ui.doctor.HomeDoctorActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.MainActivity"
+            android:name=".ui.patient.DoctorScanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.root.MainActivity"
             android:exported="false" />
         <activity
             android:name=".ui.doctor.PatientDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.doctor.HomeDoctorActivity"
+            android:name=".ui.root.OnBoardingActivity"
             android:exported="false" />
         <activity
             android:name=".ui.authentication.AuthenticationActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".ui.root.SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.OnBoardingActivity"
-            android:exported="true">
+            android:name=".ui.root.HomePatientActivity"
+            android:exported="true"
+            android:label="@string/title_activity_home_patient">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

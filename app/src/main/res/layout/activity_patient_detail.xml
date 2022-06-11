@@ -219,6 +219,7 @@
         tools:listitem="@layout/disease_items" />
 
     <Button
+        android:id="@+id/btn_add_disease"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#FFDD00"
