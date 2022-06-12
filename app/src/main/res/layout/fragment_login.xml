@@ -85,15 +85,25 @@
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <CheckBox
+                android:id="@+id/doctor_check"
+                android:layout_width="wrap_content"
+                android:layout_height="35dp"
+                android:layout_marginTop="16dp"
+                android:text="Are you a doctor?"
+                android:fontFamily="@font/poppinsregular"
+                app:layout_constraintStart_toStartOf="@+id/input_password"
+                app:layout_constraintTop_toBottomOf="@+id/input_password" />
+
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/materialTextView2"
+                android:id="@+id/text_forgot_password"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:text="Forgot Password?"
                 android:textColor="@color/grey96"
-                app:layout_constraintStart_toStartOf="@+id/input_password"
-                app:layout_constraintTop_toBottomOf="@+id/input_password" />
+                app:layout_constraintStart_toStartOf="@+id/doctor_check"
+                app:layout_constraintTop_toBottomOf="@+id/doctor_check" />
 
 
             <com.google.android.material.button.MaterialButton
@@ -108,8 +118,9 @@
                 android:text="Sign In"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/input_password"
+                app:layout_constraintHorizontal_bias="0.393"
                 app:layout_constraintStart_toStartOf="@+id/input_password"
-                app:layout_constraintTop_toBottomOf="@+id/materialTextView2" />
+                app:layout_constraintTop_toBottomOf="@+id/text_forgot_password" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/text_register"

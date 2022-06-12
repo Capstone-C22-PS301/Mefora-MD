@@ -77,10 +77,7 @@ class LoginFragment : Fragment() {
         val applicationContext = activity?.applicationContext
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(view: View) {
-                parentFragmentManager.beginTransaction()
-                    .replace(R.id.fragment_container, RegisterFragment())
-                    .addToBackStack(null)
-                    .commit()
+                Toast.makeText(applicationContext, "Masuk", Toast.LENGTH_SHORT).show()
             }
 
             override fun updateDrawState(ds: TextPaint) {

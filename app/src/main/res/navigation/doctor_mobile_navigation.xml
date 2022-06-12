@@ -2,26 +2,21 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/mobile_navigation"
-    app:startDestination="@id/doctorUserProfileFragment">
+    android:id="@+id/doctor_mobile_navigation"
+    app:startDestination="@id/navigation_home_doctor">
 
     <fragment
-        android:id="@+id/navigation_doctor"
-        android:name="com.example.mefora.ui.doctor.DoctorFragment"
-        android:label="@string/title_doctor"
-        tools:layout="@layout/fragment_doctor" />
-    <fragment
-        android:id="@+id/doctorHomeFragment"
+        android:id="@+id/navigation_home_doctor"
         android:name="com.example.mefora.ui.doctor.fragments.DoctorHomeFragment"
         android:label="fragment_doctor_home"
         tools:layout="@layout/fragment_doctor_home" />
     <fragment
-        android:id="@+id/doctorUserProfileFragment"
+        android:id="@+id/navigation_profile_doctor"
         android:name="com.example.mefora.ui.doctor.fragments.DoctorUserProfileFragment"
         android:label="fragment_doctor_user_profile"
         tools:layout="@layout/fragment_doctor_user_profile" />
     <fragment
-        android:id="@+id/doctorPatientPageFragment"
+        android:id="@+id/navigation_patient"
         android:name="com.example.mefora.ui.doctor.fragments.DoctorPatientPageFragment"
         android:label="fragment_doctor_patient_page"
         tools:layout="@layout/fragment_doctor_patient_page" />
