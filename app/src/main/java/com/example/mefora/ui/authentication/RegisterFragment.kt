@@ -1,12 +1,19 @@
 package com.example.mefora.ui.authentication
 
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.TextPaint
+import android.text.method.LinkMovementMethod
+import android.text.style.ClickableSpan
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
 import com.example.mefora.R
 import com.example.mefora.databinding.FragmentRegisterBinding
@@ -66,26 +73,42 @@ class RegisterFragment : Fragment() {
                 }
             }
         }
+
+        binding.checkboxDoctor.setOnCheckedChangeListener { _, isChecked ->
+            binding.inputDoctorId.visibility = if (isChecked) View.VISIBLE else View.GONE
+        }
+        signInLink()
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment RegisterFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            RegisterFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    private fun signInLink() {
+        val spannableString = SpannableString("Already have an account? Sign in")
+        val applicationContext = activity?.applicationContext
+        val clickableSpan = object : ClickableSpan() {
+            override fun onClick(view: View) {
+                // commit fragment sign up
+                val fragment = LoginFragment()
+                val fragmentManager = activity?.supportFragmentManager
+                fragmentManager?.commit {
+                    replace(R.id.fragment_container, fragment)
+                    addToBackStack(null)
                 }
             }
+
+            override fun updateDrawState(ds: TextPaint) {
+                super.updateDrawState(ds)
+                ds.isUnderlineText = false
+                ds.color = ContextCompat.getColor(applicationContext!!, R.color.light_pink_button)
+            }
+        }
+        spannableString.setSpan(
+            clickableSpan,
+            25,
+            spannableString.length,
+            Spannable.SPAN_INCLUSIVE_EXCLUSIVE
+        )
+        binding.tvToLogin.text = spannableString
+        binding.tvToLogin.movementMethod = LinkMovementMethod.getInstance()
     }
+
 
 }

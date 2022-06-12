@@ -28,15 +28,16 @@
             android:name=".ui.root.OnBoardingActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.authentication.AuthenticationActivity"
-            android:exported="false" />
+            android:name=".ui.root.HomePatientActivity"
+            android:exported="false"
+            android:label="@string/title_activity_home_patient"
+             />
         <activity
             android:name=".ui.root.SplashActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.root.HomePatientActivity"
-            android:exported="true"
-            android:label="@string/title_activity_home_patient">
+            android:name=".ui.authentication.AuthenticationActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

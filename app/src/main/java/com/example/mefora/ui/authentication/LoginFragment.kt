@@ -14,6 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
 import com.example.mefora.R
 import com.example.mefora.databinding.FragmentLoginBinding
@@ -25,9 +26,7 @@ import retrofit2.Response
 import kotlin.math.sign
 
 class LoginFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+
     private lateinit var binding: FragmentLoginBinding
     private lateinit var viewModel: AuthenticationViewModel
 
@@ -64,10 +63,6 @@ class LoginFragment : Fragment() {
                     }
                 }
             }
-//            activity?.supportFragmentManager?.beginTransaction()
-//                ?.replace(R.id.fragment_container, HomeDoctorActivity())
-//                ?.addToBackStack(null)
-//                ?.commit()
         }
         signUpLink()
     }
@@ -77,7 +72,13 @@ class LoginFragment : Fragment() {
         val applicationContext = activity?.applicationContext
         val clickableSpan = object : ClickableSpan() {
             override fun onClick(view: View) {
-                Toast.makeText(applicationContext, "Masuk", Toast.LENGTH_SHORT).show()
+                // commit fragment sign up
+                val fragment = RegisterFragment()
+                val fragmentManager = activity?.supportFragmentManager
+                fragmentManager?.commit {
+                    replace(R.id.fragment_container, fragment)
+                    addToBackStack(null)
+                }
             }
 
             override fun updateDrawState(ds: TextPaint) {

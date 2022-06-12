@@ -22,7 +22,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="450dp"
+            android:layout_height="wrap_content"
             android:background="@drawable/rounded_top"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -104,14 +104,46 @@
                     android:textColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
+            <CheckBox
+                android:id="@+id/checkbox_doctor"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginTop="24dp"
+                android:fontFamily="@font/poppinsregular"
+                android:text="Are you a doctor?"
+                android:textColor="@color/black"
+                app:layout_constraintStart_toStartOf="@+id/input_confirm_password"
+                app:layout_constraintTop_toBottomOf="@+id/input_confirm_password" />
 
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/input_doctor_id"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:visibility="gone"
+                android:hint="ID Doctor"
+                android:textColorHint="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/checkbox_doctor"
+                app:layout_constraintTop_toBottomOf="@+id/checkbox_doctor">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/black" />
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
+                android:layout_marginTop="48dp"
                 android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
                 android:backgroundTint="@color/light_pink_button"
                 android:paddingHorizontal="30dp"
                 android:paddingVertical="10dp"
@@ -119,12 +151,14 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/input_confirm_password"
                 app:layout_constraintStart_toStartOf="@+id/input_confirm_password"
-                app:layout_constraintTop_toBottomOf="@+id/input_confirm_password" />
+                app:layout_constraintTop_toBottomOf="@+id/input_doctor_id" />
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/tv_to_login"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
                 android:text="Already have an account ? Sign In"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
