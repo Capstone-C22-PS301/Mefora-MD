@@ -1,5 +1,6 @@
 package com.example.mefora.ui.doctor
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -31,7 +32,6 @@ class QRScannerActivity : AppCompatActivity() {
         setContentView(binding.root)
         getCameraPermission()
         qrScanner()
-
     }
 
     private fun getCameraPermission() {
@@ -84,6 +84,7 @@ class QRScannerActivity : AppCompatActivity() {
     }
 
     companion object {
+        @SuppressLint("StaticFieldLeak")
         lateinit var codeScanner: CodeScanner
         private const val CAMERA_REQ = 101
     }

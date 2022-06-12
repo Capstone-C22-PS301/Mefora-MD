@@ -33,9 +33,6 @@ class DoctorFragment : Fragment() {
         val intent = Intent(activity, DoctorScanActivity::class.java)
         startActivity(intent)
 
-//        notificationsViewModel.text.observe(viewLifecycleOwner) {
-//            binding.textDoctor.text = it
-//        }
         return view
     }
 

@@ -133,9 +133,9 @@ class DoctorMainViewModel : ViewModel() {
             })
     }
 
-    fun getPatientDiseaseData() {
+    fun getPatientDiseaseData(patientUID: String) {
         _loadingPatientDiseaseData.value = true
-        ApiConfig.getApiService().getUserDisease(firebaseAuth.currentUser?.uid!!)
+        ApiConfig.getApiService().getUserDisease(patientUID)
             .enqueue(object : Callback<GetDiseaseResponse> {
                 override fun onResponse(
                     call: Call<GetDiseaseResponse>,
