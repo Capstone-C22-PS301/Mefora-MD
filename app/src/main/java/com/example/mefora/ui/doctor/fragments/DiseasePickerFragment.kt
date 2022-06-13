@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.DialogFragment
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mefora.R
 import com.example.mefora.api.model.GetDiseaseResponseItem
 import com.example.mefora.databinding.FragmentDiseasePickerBinding
@@ -57,6 +58,7 @@ class DiseasePickerFragment : DialogFragment() {
             viewModel.diseaseData.observe(viewLifecycleOwner) {
                 it.data?.getDiseaseResponse?.let { data ->
                     val dataList = (data as List<*>).filterIsInstance<GetDiseaseResponseItem>()
+                    rc.layoutManager = LinearLayoutManager(context)
                     rc.adapter = DiseasePickerAdapter(
                         dataList,
                         object : DiseasePickerAdapter.OnItemClickListener {

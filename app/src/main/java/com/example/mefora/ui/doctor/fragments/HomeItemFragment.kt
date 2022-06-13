@@ -71,10 +71,12 @@ class HomeItemFragment : Fragment() {
                     recyclerView.adapter = adapter
                     dataFilter.forEachIndexed { index, loop ->
                         viewModel.getPatientDiseaseData(loop.patientUid.toString())
-                        viewModel.patientData.observe(viewLifecycleOwner) { patient ->
+                        viewModel.patientDiseaseData.observe(viewLifecycleOwner) { patient ->
                             when (patient) {
                                 is DataResponse.Success -> {
-                                    adapter.addData(dataFilter[index])
+                                    if (patient.data?.getDiseaseResponse?.size != 0) {
+                                        adapter.addData(dataFilter[index])
+                                    }
                                 }
                                 is DataResponse.Failed -> {
                                     Toast.makeText(context, "Error!", Toast.LENGTH_SHORT).show()

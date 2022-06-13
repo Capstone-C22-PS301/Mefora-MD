@@ -13,6 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Mefora">
         <activity
+            android:name=".ui.doctor.EditProfileDoctorActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.doctor.HomeDoctorActivity"
             android:exported="false" />
         <activity

@@ -4,9 +4,13 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/drawable/home_items_background.xml" value="0.158" />
+        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/acitivity_edit_profile_patient.xml" value="0.1" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/activity_authentication.xml" value="0.225" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/activity_doctor_detail.xml" value="0.1" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/activity_doctor_scan.xml" value="0.1" />
+        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/activity_edit_profile.xml" value="0.13020833333333334" />
+        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/activity_edit_profile_doctor.xml" value="0.33" />
+        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/activity_edit_profile_patient.xml" value="0.2359375" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/activity_home_doctor.xml" value="0.20885416666666667" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/activity_home_patient.xml" value="0.225" />
@@ -18,31 +22,21 @@
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/disease_items.xml" value="0.33" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_disease_picker.xml" value="0.22" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_docotr_patient_page.xml" value="0.225" />
-        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_doctor.xml" value="0.20885416666666667" />
+        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_doctor.xml" value="0.33" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_doctor_home.xml" value="0.25" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_doctor_patient_page.xml" value="0.33" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_doctor_user_profile.xml" value="0.25" />
-        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_home.xml" value="0.25" />
+        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_food.xml" value="0.12864583333333332" />
+        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_home.xml" value="0.16" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_home_item.xml" value="0.225" />
-        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_login.xml" value="0.225" />
-        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
+        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_login.xml" value="0.1" />
+        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_profile.xml" value="0.25" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_q_r_scanner.xml" value="0.225" />
-        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_register.xml" value="0.20885416666666667" />
+        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/fragment_register.xml" value="0.1" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/home_items.xml" value="0.25" />
+        <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/item_row_food.xml" value="0.22291666666666668" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/layout/patient_items.xml" value="0.25" />
         <entry key="..\:/DATA/Maid-Chan/Cyber/data_program/DCD/Capstone/Mefora/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20885416666666667" />
-        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_home_doctor.xml" value="0.16875" />
-        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_home_patient.xml" value="0.264" />
-        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/activity_on_boarding.xml" value="0.1" />
-        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_doctor_patient_page.xml" value="0.1" />
-        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_doctor_user_profile.xml" value="0.1526268115942029" />
-        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_food.xml" value="0.22554347826086957" />
-        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_login.xml" value="0.264" />
-        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_profile.xml" value="0.1526268115942029" />
-        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/layout/fragment_register.xml" value="0.264" />
-        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/menu/bottom_nav_menu.xml" value="0.16875" />
-        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/menu/bottom_nav_menu_doctor.xml" value="0.16875" />
-        <entry key="..\:/PoenyaHafie/AllAboutKodingss/Kotlin/MeFoRa/app/src/main/res/menu/bottom_nav_menu_patient.xml" value="0.1" />
       </map>
     </option>
   </component>

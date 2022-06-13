@@ -13,9 +13,8 @@ interface ApiService {
         "Content-Type: application/json"
     )
     fun createUser(
-        @Header("Authorization") auth: String,
-        @Body status: Boolean
-    ): Call<DataResponse<CreateUserResponse>>
+        @Body userData: CreateUser
+    ): Call<CreateUserResponse>
 
     @GET("api/users")
     @Headers(
@@ -35,14 +34,19 @@ interface ApiService {
         @Header("token_uid") auth: String,
     ): Call<GetUserResponse>
 
-    @PUT("api/users/{UID}")
+    @PUT("api/users/uid")
     @Headers(
         "Accept: application/json",
         "Content-Type: application/json"
     )
     fun updateUser(
-        @Path("UID") UID: String,
-        @Body status: Boolean
+        @Header("token_uid") auth: String,
+        @Body UID: String,
+        @Body name: String,
+        @Body nickname: String,
+        @Body address: String,
+        @Body birth: String,
+        @Body status: Boolean,
     ): Call<UpdateUserResponse>
 
     @DELETE("api/users/{UID}")
@@ -55,7 +59,7 @@ interface ApiService {
     ): Call<DeleteUserResponse>
 
 
-    @POST("http://localhost:8080/api/lists")
+    @POST("api/lists")
     @Headers(
         "Accept: application/json",
         "Content-Type: application/json"
@@ -66,7 +70,7 @@ interface ApiService {
         @Body doctor_uid: String
     ): Call<CreatePatientListResponse>
 
-    @GET("http://localhost:8080/api/lists/doctor_uid")
+    @GET("api/lists/doctor_uid")
     @Headers(
         "Accept: application/json",
         "Content-Type: application/json"
@@ -83,7 +87,7 @@ interface ApiService {
         @Body instances: Instances
     ): Call<GetPredictionResponse>
 
-    @POST("http://localhost:8080/api/userDiseases")
+    @POST("api/userDiseases")
     @Headers(
         "Accept: application/json",
         "Content-Type: application/json"
@@ -94,7 +98,7 @@ interface ApiService {
         @Body disease_name: String
     ): Call<AddDiseaseResponse>
 
-    @GET("http://localhost:8080/api/userDiseases")
+    @GET("api/userDiseases")
     @Headers(
         "Accept: application/json",
         "Content-Type: application/json"
@@ -103,7 +107,7 @@ interface ApiService {
         @Header("patient_uid") auth: String,
     ): Call<GetDiseaseResponse>
 
-    @GET("http://localhost:8080/api/diseases")
+    @GET("api/diseases")
     @Headers(
         "Accept: application/json",
         "Content-Type: application/json"

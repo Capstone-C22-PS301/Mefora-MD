@@ -70,7 +70,44 @@ data class GetUserResponse(
 
     @field:SerializedName("updatedAt")
     val updatedAt: String? = null
-)
+) : Parcelable {
+    constructor(parcel: Parcel) : this(
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readString(),
+        parcel.readValue(Boolean::class.java.classLoader) as? Boolean,
+        parcel.readString()
+    ) {
+    }
+
+    override fun writeToParcel(parcel: Parcel, flags: Int) {
+        parcel.writeString(uID)
+        parcel.writeString(createdAt)
+        parcel.writeString(address)
+        parcel.writeString(name)
+        parcel.writeString(nickname)
+        parcel.writeString(birth)
+        parcel.writeValue(status)
+        parcel.writeString(updatedAt)
+    }
+
+    override fun describeContents(): Int {
+        return 0
+    }
+
+    companion object CREATOR : Parcelable.Creator<GetUserResponse> {
+        override fun createFromParcel(parcel: Parcel): GetUserResponse {
+            return GetUserResponse(parcel)
+        }
+
+        override fun newArray(size: Int): Array<GetUserResponse?> {
+            return arrayOfNulls(size)
+        }
+    }
+}
 
 data class UpdateUserResponse(
     @field:SerializedName("success")

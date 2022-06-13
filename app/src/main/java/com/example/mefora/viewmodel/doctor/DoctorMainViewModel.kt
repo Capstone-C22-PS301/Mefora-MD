@@ -1,5 +1,6 @@
 package com.example.mefora.viewmodel.doctor
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.mefora.api.ApiConfig
@@ -9,60 +10,106 @@ import com.google.firebase.auth.FirebaseAuth
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
+import retrofit2.http.Body
+import retrofit2.http.Header
 
 class DoctorMainViewModel : ViewModel() {
 
-    private val firebaseAuth = FirebaseAuth.getInstance()
+    fun getAuth() = FirebaseAuth.getInstance()
 
     private val _patientListData = MutableLiveData<DataResponse<GetPatientListResponse>>()
-    val patientListData: MutableLiveData<DataResponse<GetPatientListResponse>> = _patientListData
+    val patientListData: LiveData<DataResponse<GetPatientListResponse>> = _patientListData
 
     private val _loadingPatientListData = MutableLiveData<Boolean>()
-    val loadingPatientListData: MutableLiveData<Boolean> = _loadingPatientListData
+    val loadingPatientListData: LiveData<Boolean> = _loadingPatientListData
 
     private val _createPatientListData = MutableLiveData<DataResponse<CreatePatientListResponse>>()
-    val createPatientListData: MutableLiveData<DataResponse<CreatePatientListResponse>> =
+    val createPatientListData: LiveData<DataResponse<CreatePatientListResponse>> =
         _createPatientListData
 
     private val _loadingCreatePatientListData = MutableLiveData<Boolean>()
-    val loadingCreatePatientListData: MutableLiveData<Boolean> = _loadingCreatePatientListData
+    val loadingCreatePatientListData: LiveData<Boolean> = _loadingCreatePatientListData
 
     private val _doctorData = MutableLiveData<DataResponse<GetUserResponse>>()
-    val doctorData: MutableLiveData<DataResponse<GetUserResponse>> = _doctorData
+    val doctorData: LiveData<DataResponse<GetUserResponse>> = _doctorData
 
     private val _loadingDoctorData = MutableLiveData<Boolean>()
-    val loadingDoctorData: MutableLiveData<Boolean> = _loadingDoctorData
+    val loadingDoctorData: LiveData<Boolean> = _loadingDoctorData
 
     private val _patientData = MutableLiveData<DataResponse<GetUserResponse>>()
-    val patientData: MutableLiveData<DataResponse<GetUserResponse>> = _patientData
+    val patientData: LiveData<DataResponse<GetUserResponse>> = _patientData
 
     private val _loadingPatientData = MutableLiveData<Boolean>()
-    val loadingPatientData: MutableLiveData<Boolean> = _loadingPatientData
+    val loadingPatientData: LiveData<Boolean> = _loadingPatientData
 
     private val _patientDiseaseData = MutableLiveData<DataResponse<GetDiseaseResponse>>()
-    val patientDiseaseData: MutableLiveData<DataResponse<GetDiseaseResponse>> = _patientDiseaseData
+    val patientDiseaseData: LiveData<DataResponse<GetDiseaseResponse>> = _patientDiseaseData
 
     private val _loadingPatientDiseaseData = MutableLiveData<Boolean>()
-    val loadingPatientDiseaseData: MutableLiveData<Boolean> = _loadingPatientDiseaseData
+    val loadingPatientDiseaseData: LiveData<Boolean> = _loadingPatientDiseaseData
 
     private val _deletePatientData = MutableLiveData<DataResponse<DeleteUserResponse>>()
-    val deletePatientData: MutableLiveData<DataResponse<DeleteUserResponse>> = _deletePatientData
+    val deletePatientData: LiveData<DataResponse<DeleteUserResponse>> = _deletePatientData
 
     private val _loadingDeletePatientData = MutableLiveData<Boolean>()
-    val loadingDeletePatientData: MutableLiveData<Boolean> = _loadingDeletePatientData
+    val loadingDeletePatientData: LiveData<Boolean> = _loadingDeletePatientData
 
     private val _diseaseData = MutableLiveData<DataResponse<GetDiseaseResponse>>()
-    val diseaseData: MutableLiveData<DataResponse<GetDiseaseResponse>> = _diseaseData
+    val diseaseData: LiveData<DataResponse<GetDiseaseResponse>> = _diseaseData
 
     private val _loadingDiseaseData = MutableLiveData<Boolean>()
-    val loadingDiseaseData: MutableLiveData<Boolean> = _loadingDiseaseData
+    val loadingDiseaseData: LiveData<Boolean> = _loadingDiseaseData
 
     private val _addPatientDiseaseData = MutableLiveData<DataResponse<AddDiseaseResponse>>()
-    val addPatientDiseaseData: MutableLiveData<DataResponse<AddDiseaseResponse>> =
+    val addPatientDiseaseData: LiveData<DataResponse<AddDiseaseResponse>> =
         _addPatientDiseaseData
 
     private val _loadingAddPatientDiseaseData = MutableLiveData<Boolean>()
-    val loadingAddPatientDiseaseData: MutableLiveData<Boolean> = _loadingAddPatientDiseaseData
+    val loadingAddPatientDiseaseData: LiveData<Boolean> = _loadingAddPatientDiseaseData
+
+    private val _editProfile = MutableLiveData<DataResponse<UpdateUserResponse>>()
+    val editProfile: LiveData<DataResponse<UpdateUserResponse>> = _editProfile
+
+    private val _loadingEditProfile = MutableLiveData<Boolean>()
+    val loadingEditProfile: LiveData<Boolean> = _loadingEditProfile
+
+    private val _logout = MutableLiveData<DataResponse<Boolean>>()
+    val logout: LiveData<DataResponse<Boolean>> = _logout
+
+    private val _loadingLogout = MutableLiveData<Boolean>()
+    val loadingLogout: LiveData<Boolean> = _loadingLogout
+
+    fun editUserData(userData: GetUserResponse) {
+        _loadingEditProfile.value = true
+        val authData = getAuth().currentUser
+        ApiConfig.getApiService().updateUser(
+            authData?.uid.toString(),
+            authData?.uid.toString(),
+            userData.name.toString(),
+            userData.nickname.toString(),
+            userData.address.toString(),
+            userData.address.toString(),
+            false,
+        ).enqueue(object : Callback<UpdateUserResponse> {
+            override fun onResponse(
+                call: Call<UpdateUserResponse>,
+                response: Response<UpdateUserResponse>
+            ) {
+                if (response.isSuccessful) {
+                    _editProfile.value = DataResponse.Success(response.body()!!)
+                } else {
+                    _editProfile.value = DataResponse.Failed(response.message())
+                }
+                _loadingEditProfile.value = false
+            }
+
+            override fun onFailure(call: Call<UpdateUserResponse>, t: Throwable) {
+                _editProfile.value = DataResponse.Failed(t.message.toString())
+                _loadingEditProfile.value = false
+            }
+        })
+    }
+
 
     fun addPatientDisease(diseaseId: String, diseaseName: String, patientId: String) {
         _loadingAddPatientDiseaseData.value = true
@@ -178,7 +225,7 @@ class DoctorMainViewModel : ViewModel() {
 
     fun getPatientList() {
         _loadingPatientListData.value = true
-        firebaseAuth.currentUser?.uid?.let {
+        getAuth().currentUser?.uid?.let {
             ApiConfig.getApiService().getPatientList(it)
                 .enqueue(object : Callback<GetPatientListResponse> {
                     override fun onResponse(
@@ -210,7 +257,7 @@ class DoctorMainViewModel : ViewModel() {
 
     fun getDoctorData() {
         _loadingDoctorData.value = true
-        firebaseAuth.currentUser?.uid?.let {
+        getAuth().currentUser?.uid?.let {
             ApiConfig.getApiService().getUser(it).enqueue(object : Callback<GetUserResponse> {
                 override fun onResponse(
                     call: Call<GetUserResponse>,
@@ -241,7 +288,7 @@ class DoctorMainViewModel : ViewModel() {
 
     fun addPatientToList(patientUID: String) {
         _loadingPatientListData.value = true
-        firebaseAuth.currentUser?.uid?.let {
+        getAuth().currentUser?.uid?.let {
             ApiConfig.getApiService().createList(it, it, patientUID)
                 .enqueue(object : Callback<CreatePatientListResponse> {
                     override fun onResponse(
@@ -269,6 +316,15 @@ class DoctorMainViewModel : ViewModel() {
                     }
                 })
 
+        }
+    }
+
+    fun logout() {
+        getAuth().signOut()
+        if (getAuth().currentUser == null) {
+            _logout.value = DataResponse.Success(true)
+        } else {
+            _logout.value = DataResponse.Failed("Logout failed")
         }
     }
 }
