@@ -105,7 +105,7 @@ dependencies {
 
     //QRCode
     implementation 'com.github.yuriy-budiyev:code-scanner:2.3.2'
-    implementation("androidmads.library.qrgenearator:QRGenearator:1.0.4")
+//    implementation("androidmads.library.qrgenearator:QRGenearator:1.0.4")
     implementation 'com.google.zxing:core:3.3.2'
 }
 

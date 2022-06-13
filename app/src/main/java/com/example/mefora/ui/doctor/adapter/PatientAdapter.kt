@@ -1,5 +1,6 @@
 package com.example.mefora.ui.doctor.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
@@ -17,6 +18,12 @@ class PatientAdapter(
 
     interface OnItemClickListener {
         fun onItemClick(item: GetPatientListResponseItem)
+    }
+
+    @SuppressLint("NotifyDataSetChanged")
+    fun addData(getPatientListResponseItem: GetPatientListResponseItem){
+        data = data.plus(getPatientListResponseItem)
+        notifyDataSetChanged()
     }
 
     fun setData(data: List<GetPatientListResponseItem>) {

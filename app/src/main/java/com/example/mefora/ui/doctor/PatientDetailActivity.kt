@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mefora.R
 import com.example.mefora.api.model.GetDiseaseResponseItem
 import com.example.mefora.databinding.ActivityPatientDetailBinding
@@ -44,6 +45,7 @@ class PatientDetailActivity : AppCompatActivity() {
                                         response.data?.let { data ->
                                             val dataList =
                                                 (data.getDiseaseResponse as List<*>).filterIsInstance<GetDiseaseResponseItem>()
+                                            rcDisease.layoutManager = LinearLayoutManager(this@PatientDetailActivity)
                                             rcDisease.adapter = DiseasePatientAdapter(dataList)
                                         }
                                     }
