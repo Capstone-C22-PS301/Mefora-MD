@@ -60,7 +60,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Rekomendasi Makanan Hari Ini"
+        android:text="Patient Hasn't Diagnosed Yet"
         android:textAlignment="textStart"
         android:textColor="@color/black"
         android:textSize="23.5sp"

@@ -5,9 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.mefora.databinding.FragmentHomeBinding
-import com.example.mefora.viewmodel.patient.PatientMainViewModel
 
 class HomeFragment : Fragment() {
 
@@ -22,15 +20,10 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this)[PatientMainViewModel::class.java]
 
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
 
-//        notificationsViewModel.text.observe(viewLifecycleOwner) {
-//            binding.textHome.text = it
-//        }
         return view
     }
 

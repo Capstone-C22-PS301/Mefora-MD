@@ -15,5 +15,8 @@
     <string name="tab_text_food_2">Recommended</string>
     <string name="tab_text_food_3">Routine</string>
     <string name="title_patient">Patient</string>
+    <string name="error_empty">Please Fill Out the Form First</string>
+    <string name="error_email">Wrong Email Format</string>
+    <string name="error_password_not_match">Password Does Not Match</string>
 
 </resources>

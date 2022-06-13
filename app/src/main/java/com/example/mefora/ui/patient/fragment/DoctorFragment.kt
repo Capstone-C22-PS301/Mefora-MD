@@ -12,9 +12,6 @@ import com.example.mefora.databinding.FragmentDoctorBinding
 class DoctorFragment : Fragment() {
 
     private var _binding: FragmentDoctorBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -22,8 +19,6 @@ class DoctorFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-//        val notificationsViewModel =
-//            ViewModelProvider(this)[DoctorViewModel::class.java]
 
         _binding = FragmentDoctorBinding.inflate(inflater, container, false)
         val view = binding.root

@@ -6,23 +6,34 @@
     android:layout_height="match_parent"
     tools:context=".ui.patient.fragment.FoodFragment">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+<!--    <LinearLayout-->
+<!--        android:id="@+id/rc_layout"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical">-->
 
-        <com.google.android.material.tabs.TabLayout
-            android:id="@+id/tab_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+<!--        <com.google.android.material.tabs.TabLayout-->
+<!--            android:id="@+id/tab_layout"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content" />-->
 
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/pager"
-            android:layout_width="match_parent"
+<!--        <androidx.viewpager2.widget.ViewPager2-->
+<!--            android:id="@+id/pager"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="0dp"-->
+<!--            android:layout_weight="1" />-->
+<!--        -->
+<!--    </LinearLayout>-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_story"
+            android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="1" />
-    </LinearLayout>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_row_food"/>
+
 
     <LinearLayout
         android:id="@+id/text_noscan"

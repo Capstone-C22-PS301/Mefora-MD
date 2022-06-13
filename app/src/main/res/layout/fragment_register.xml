@@ -12,14 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--        <View-->
-        <!--            android:layout_width="match_parent"-->
-        <!--            android:layout_height="450dp"-->
-        <!--            android:background="@drawable/rounded_top"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintEnd_toEndOf="parent" >-->
-        <!--        </View>-->
-
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -50,16 +42,17 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Email"
-                android:textColorHint="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/materialTextView"
                 app:layout_constraintTop_toBottomOf="@+id/materialTextView">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <com.example.mefora.ui.authentication.customview.MyEmailEditText
+                    android:id="@+id/et_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black" />
+                    android:ems="10"
+                    android:inputType="textEmailAddress" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -70,17 +63,18 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Password"
-                android:textColorHint="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/input_email"
-                app:layout_constraintTop_toBottomOf="@+id/input_email"
-                app:passwordToggleEnabled="true">
+                app:layout_constraintTop_toBottomOf="@+id/input_email">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <com.example.mefora.ui.authentication.customview.MyPasswordEditText
+                    android:id="@+id/et_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black" />
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    app:passwordToggleEnabled="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
@@ -91,17 +85,18 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Confirm Password"
-                android:textColorHint="@color/black"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/input_password"
-                app:layout_constraintTop_toBottomOf="@+id/input_password"
-                app:passwordToggleEnabled="true">
+                app:layout_constraintTop_toBottomOf="@+id/input_password">
 
-                <com.google.android.material.textfield.TextInputEditText
+                <com.example.mefora.ui.authentication.customview.MyPasswordEditText
+                    android:id="@+id/et_confirm_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/black" />
+                    android:ems="10"
+                    android:inputType="textPassword"
+                    app:passwordToggleEnabled="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <CheckBox
@@ -131,6 +126,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/checkbox_doctor">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_doctor_id"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColor="@color/black" />

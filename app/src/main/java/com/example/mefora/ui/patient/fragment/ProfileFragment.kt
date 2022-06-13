@@ -1,5 +1,6 @@
 package com.example.mefora.ui.patient.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.mefora.databinding.FragmentProfileBinding
+import com.example.mefora.ui.patient.EditProfilePatientActivity
 import com.example.mefora.viewmodel.patient.PatientMainViewModel
 
 class ProfileFragment : Fragment() {
@@ -22,15 +24,14 @@ class ProfileFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this)[PatientMainViewModel::class.java]
 
         _binding = FragmentProfileBinding.inflate(inflater, container, false)
         val view = binding.root
 
-//        notificationsViewModel.text.observe(viewLifecycleOwner) {
-//            binding.textProfile.text = it
-//        }
+        binding.buttonEdit.setOnClickListener{
+            val intent = Intent(activity, EditProfilePatientActivity::class.java)
+            startActivity(intent)
+        }
         return view
     }
 
