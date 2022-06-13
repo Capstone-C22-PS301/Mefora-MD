@@ -16,9 +16,6 @@
             android:name=".ui.doctor.EditProfileDoctorActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.patient.EditProfilePatientActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.doctor.HomeDoctorActivity"
             android:exported="false" />
         <activity
@@ -31,24 +28,25 @@
             android:name=".ui.doctor.PatientDetailActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.root.OnBoardingActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.authentication.AuthenticationActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.root.SplashActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.root.HomePatientActivity"
-            android:exported="true"
-            android:label="@string/title_activity_home_patient">
+
+            android:name=".ui.root.OnBoardingActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ui.root.SplashActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.root.HomePatientActivity"
+            android:exported="true"
+            android:label="@string/title_activity_home_patient" />
     </application>
 
 </manifest>

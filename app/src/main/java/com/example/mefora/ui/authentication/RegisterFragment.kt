@@ -1,13 +1,17 @@
 package com.example.mefora.ui.authentication
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.text.*
 import android.text.method.LinkMovementMethod
 import android.text.style.ClickableSpan
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.commit
 import androidx.lifecycle.ViewModelProvider
@@ -16,6 +20,9 @@ import com.example.mefora.databinding.FragmentRegisterBinding
 import com.example.mefora.viewmodel.AuthenticationViewModel
 import com.example.mefora.ui.authentication.customview.MyEmailEditText
 import com.example.mefora.ui.authentication.customview.MyPasswordEditText
+import com.example.mefora.ui.doctor.HomeDoctorActivity
+import com.example.mefora.ui.root.HomePatientActivity
+import com.example.mefora.util.DataResponse
 
 class RegisterFragment : Fragment() {
 
@@ -24,6 +31,7 @@ class RegisterFragment : Fragment() {
     private lateinit var myPasswordEditText: MyPasswordEditText
     private lateinit var myConfirmPasswordEditText: MyPasswordEditText
     private lateinit var myEmailEditText: MyEmailEditText
+    private lateinit var mContext: Context
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,6 +40,11 @@ class RegisterFragment : Fragment() {
         // Inflate the layout for this fragment
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+        mContext = context
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -147,7 +160,7 @@ class RegisterFragment : Fragment() {
             when {
                 email.isEmpty() || messageEmailEditText.isNotEmpty() -> {
                     binding.inputEmail.error = null
-                    if(email.isEmpty()) {
+                    if (email.isEmpty()) {
                         binding.inputEmail.error = getString(R.string.error_empty)
                     } else {
                         binding.inputEmail.error = messageEmailEditText
@@ -166,9 +179,9 @@ class RegisterFragment : Fragment() {
                         binding.inputConfirmPassword.error = getString(R.string.error_empty)
                     }
                     if (cpassword != password) {
-                        binding.inputConfirmPassword.error = getString(R.string.error_password_not_match)
-                    }
-                    else {
+                        binding.inputConfirmPassword.error =
+                            getString(R.string.error_password_not_match)
+                    } else {
                         binding.inputConfirmPassword.error = messageConfirmPasswordEditText
                     }
                 }
@@ -177,6 +190,57 @@ class RegisterFragment : Fragment() {
                         email,
                         password
                     )
+                    authenticationViewModel.authenticationRegisterData.observe(viewLifecycleOwner) {
+                        when (it) {
+                            is DataResponse.Success -> {
+                                Toast.makeText(context, "Register Success", Toast.LENGTH_SHORT)
+                                    .show()
+                                it.data?.let { dataApi ->
+                                    if (dataApi.success!!) {
+                                        authenticationViewModel.doLogin(email, password)
+                                        authenticationViewModel.authenticationLoginData.observe(
+                                            viewLifecycleOwner
+                                        ) { dataAuth ->
+                                            when (dataAuth) {
+                                                is DataResponse.Success -> {
+                                                    dataAuth.data?.let { dataUser ->
+                                                        if (dataUser.status!!) {
+                                                            Intent(
+                                                                context,
+                                                                HomeDoctorActivity::class.java
+                                                            ).also { intent ->
+                                                                startActivity(intent)
+                                                                activity?.finish()
+                                                            }
+                                                        } else {
+                                                            Intent(
+                                                                context,
+                                                                HomePatientActivity::class.java
+                                                            ).also { intent ->
+                                                                startActivity(intent)
+                                                                activity?.finish()
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                                is DataResponse.Failed -> {
+                                                    Toast.makeText(
+                                                        context,
+                                                        dataAuth.msg.toString(),
+                                                        Toast.LENGTH_SHORT
+                                                    ).show()
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            is DataResponse.Failed -> {
+                                Log.d("TAG", "setupAction: ${it.data?.message}")
+//                                Toast.makeText(mContext, it.data?.message, Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                    }
                 }
             }
         }

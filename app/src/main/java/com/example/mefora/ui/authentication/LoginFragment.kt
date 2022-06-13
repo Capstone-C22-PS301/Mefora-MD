@@ -140,8 +140,8 @@ class LoginFragment : Fragment() {
                     }
                 }
                 else -> {
-                    viewModel.doLogin(binding.etEmail.text.toString(), binding.etPassword.text.toString())
-                    viewModel.authenticationData.observe(viewLifecycleOwner) {
+                    viewModel.doLogin(email, password)
+                    viewModel.authenticationLoginData.observe(viewLifecycleOwner) {
                         when (it) {
                             is DataResponse.Success -> {
                                 Toast.makeText(context, "Login Success", Toast.LENGTH_SHORT).show()

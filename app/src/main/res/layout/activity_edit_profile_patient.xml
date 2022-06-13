@@ -188,12 +188,12 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/profile_text_id_doctor"
+            android:id="@+id/profile_text_birth"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:fontFamily="@font/poppinsmedium"
-            android:text="Doctor ID"
+            android:text="Birth Date"
             android:textAlignment="textStart"
             android:textColor="@color/black"
             android:textSize="14sp"
@@ -201,18 +201,18 @@
             app:layout_constraintTop_toBottomOf="@+id/text_address" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/text_id_doctor"
+            android:id="@+id/text_birth"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginEnd="24dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/profile_text_id_doctor"
-            app:layout_constraintTop_toBottomOf="@+id/profile_text_id_doctor">
+            app:layout_constraintStart_toStartOf="@+id/profile_text_birth"
+            app:layout_constraintTop_toBottomOf="@+id/profile_text_birth">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_id_doctor"
+                android:id="@+id/et_birth"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -220,38 +220,7 @@
                 android:inputType="none" />
         </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/profile_text_doctor_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:fontFamily="@font/poppinsmedium"
-            android:text="Doctor Name"
-            android:textAlignment="textStart"
-            android:textColor="@color/black"
-            android:textSize="14sp"
-            app:layout_constraintStart_toStartOf="@+id/text_id_doctor"
-            app:layout_constraintTop_toBottomOf="@+id/text_id_doctor" />
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/text_doctor_name"
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="24dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="@+id/profile_text_doctor_name"
-            app:layout_constraintTop_toBottomOf="@+id/profile_text_doctor_name">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/et_doctor_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:enabled="false"
-                android:inputType="none" />
-        </com.google.android.material.textfield.TextInputLayout>
+        
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/button_edit"
@@ -261,11 +230,11 @@
             android:backgroundTint="@color/light_blue_button"
             android:fontFamily="@font/poppinsmedium"
             android:text="Edit"
-            app:layout_constraintStart_toStartOf="@+id/text_doctor_name"
-            app:layout_constraintTop_toBottomOf="@+id/text_doctor_name" />
+            app:layout_constraintStart_toStartOf="@+id/text_birth"
+            app:layout_constraintTop_toBottomOf="@+id/text_birth" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_logout"
+            android:id="@+id/button_cancel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -276,7 +245,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toEndOf="@+id/button_edit"
-            app:layout_constraintTop_toBottomOf="@+id/text_doctor_name" />
+            app:layout_constraintTop_toBottomOf="@+id/text_birth" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

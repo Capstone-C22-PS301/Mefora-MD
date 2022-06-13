@@ -47,11 +47,11 @@ class DiseasePatientAdapter(private val data: List<GetDiseaseResponseItem>) :
         }
 
         override fun getOldListSize(): Int {
-            return 1
+            return oldItem.size
         }
 
         override fun getNewListSize(): Int {
-            return 1
+            return newItem.size
         }
     }
 }

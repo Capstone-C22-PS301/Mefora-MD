@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/profile_name"
+            android:id="@+id/tv_profile_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -43,7 +43,7 @@
             app:layout_constraintTop_toTopOf="@+id/profile_image" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/profile_id_patient"
+            android:id="@+id/tv_profile_id_patient"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -52,11 +52,11 @@
             android:textAlignment="textStart"
             android:textColor="@color/black_dim"
             android:textSize="12sp"
-            app:layout_constraintStart_toStartOf="@+id/profile_name"
-            app:layout_constraintTop_toBottomOf="@+id/profile_name" />
+            app:layout_constraintStart_toStartOf="@+id/tv_profile_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_name" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/profile_email"
+            android:id="@+id/tv_profile_email"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/poppinsmedium"
@@ -65,7 +65,7 @@
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/profile_image"
-            app:layout_constraintStart_toStartOf="@+id/profile_id_patient" />
+            app:layout_constraintStart_toStartOf="@+id/tv_profile_id_patient" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/text_about"
@@ -103,7 +103,7 @@
             app:layout_constraintTop_toBottomOf="@+id/arrow_back_button" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/profile_full_name"
+            android:id="@+id/tv_profile_full_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="6dp"
@@ -123,8 +123,8 @@
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
             android:background="@color/grey96"
-            app:layout_constraintStart_toStartOf="@+id/profile_full_name"
-            app:layout_constraintTop_toBottomOf="@+id/profile_full_name" />
+            app:layout_constraintStart_toStartOf="@+id/tv_profile_full_name"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_full_name" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/profile_text_nickname"
@@ -140,7 +140,7 @@
             app:layout_constraintTop_toBottomOf="@+id/hr2" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/profile_nickname"
+            android:id="@+id/tv_profile_nickname"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -160,8 +160,8 @@
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
             android:background="@color/grey96"
-            app:layout_constraintStart_toStartOf="@+id/profile_nickname"
-            app:layout_constraintTop_toBottomOf="@+id/profile_nickname" />
+            app:layout_constraintStart_toStartOf="@+id/tv_profile_nickname"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_nickname" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/profile_text_address"
@@ -177,7 +177,7 @@
             app:layout_constraintTop_toBottomOf="@+id/hr3" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/profile_address"
+            android:id="@+id/tv_profile_address"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -197,8 +197,8 @@
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
             android:background="@color/grey96"
-            app:layout_constraintStart_toStartOf="@+id/profile_address"
-            app:layout_constraintTop_toBottomOf="@+id/profile_address" />
+            app:layout_constraintStart_toStartOf="@+id/tv_profile_address"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_address" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/profile_text_id_doctor"
@@ -214,7 +214,7 @@
             app:layout_constraintTop_toBottomOf="@+id/hr4" />
 
         <com.google.android.material.textview.MaterialTextView
-            android:id="@+id/profile_id_doctor"
+            android:id="@+id/tv_profile_id_doctor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -234,8 +234,8 @@
             android:layout_height="1dp"
             android:layout_marginTop="8dp"
             android:background="@color/grey96"
-            app:layout_constraintStart_toStartOf="@+id/profile_id_doctor"
-            app:layout_constraintTop_toBottomOf="@+id/profile_id_doctor" />
+            app:layout_constraintStart_toStartOf="@+id/tv_profile_id_doctor"
+            app:layout_constraintTop_toBottomOf="@+id/tv_profile_id_doctor" />
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/profile_text_doctor_name"
@@ -266,7 +266,7 @@
             app:layout_constraintTop_toBottomOf="@+id/profile_text_doctor_name" />
 
         <com.google.android.material.button.MaterialButton
-            android:id="@+id/button_edit"
+            android:id="@+id/btn_profile_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
@@ -287,7 +287,7 @@
             android:text="Logout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/button_edit"
+            app:layout_constraintStart_toEndOf="@+id/btn_profile_edit"
             app:layout_constraintTop_toBottomOf="@+id/profile_doctor_name" />
 
         <TextView
@@ -297,7 +297,7 @@
             android:text=" "
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_edit" />
+            app:layout_constraintTop_toBottomOf="@+id/btn_profile_edit" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>

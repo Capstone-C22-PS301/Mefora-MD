@@ -1,5 +1,6 @@
 package com.example.mefora.ui.doctor.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import com.example.mefora.R
 import com.example.mefora.databinding.FragmentDoctorUserProfileBinding
+import com.example.mefora.ui.doctor.EditProfileDoctorActivity
 import com.example.mefora.viewmodel.doctor.DoctorMainViewModel
 
 // TODO: Rename parameter arguments, choose names that match
@@ -16,7 +18,6 @@ private const val ARG_PARAM1 = "param1"
 private const val ARG_PARAM2 = "param2"
 private lateinit var binding: FragmentDoctorUserProfileBinding
 private lateinit var viewModel: DoctorMainViewModel
-
 
 /**
  * A simple [Fragment] subclass.
@@ -56,7 +57,16 @@ class DoctorUserProfileFragment : Fragment() {
                     tvNickname.text = data.nickname
                     tvAddress.text = data.address
                     tvDoctorId.text = data.uID
+                    buttonEdit.setOnClickListener {
+                        Intent(context, EditProfileDoctorActivity::class.java).also { intent ->
+                            intent.putExtra("data", data)
+                            startActivity(intent)
+                        }
+                    }
                 }
+            }
+            buttonLogout.setOnClickListener {
+                viewModel.logout()
             }
         }
     }
